@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="9532" systemVersion="15E65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9530"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="DPAResourceDetailStretchyHeaderView" customModule="DiepPhapAm" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="299" height="188"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="vO7-4l-4dg">
+                    <rect key="frame" x="8" y="39" width="240" height="128"/>
+                </imageView>
+            </subviews>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstItem="vO7-4l-4dg" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="3kX-tJ-VOO"/>
+                <constraint firstItem="vO7-4l-4dg" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="4w8-fh-nGl"/>
+                <constraint firstAttribute="trailing" secondItem="vO7-4l-4dg" secondAttribute="trailing" id="4zi-UY-AY4"/>
+                <constraint firstAttribute="bottom" secondItem="vO7-4l-4dg" secondAttribute="bottom" id="DeL-dY-CZJ"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <connections>
+                <outlet property="DPAResourceDetailStretchyHeaderView_ResourceImageView" destination="vO7-4l-4dg" id="dTl-oA-h3c"/>
+            </connections>
+            <point key="canvasLocation" x="45.5" y="85"/>
+        </view>
+    </objects>
+</document>

@@ -10,12 +10,19 @@ import Foundation
 class DPAResource:NSObject
 
 {
-    var resouceThumbnailURLString = ""
+    
+    var resourceID:Int = -1
+    var resouceLinks:DPALinks?
     var resourceTitle = ""
     var resourceDescription = ""
     init(fromDict dict: NSDictionary) {
         
-        
+        if let ID = dict["resource_id"] as? Int {
+            
+            self.resourceID = ID
+            
+        }
+
         
         if let title = dict["resource_title"] as? String {
             
@@ -27,9 +34,11 @@ class DPAResource:NSObject
             
             self.resourceDescription = description
         }
-        if let thumbnail = dict["thumbnail"] as? String {
+        if let links = dict["links"] as? NSDictionary {
             
-            self.resouceThumbnailURLString = thumbnail
+            
+            let newlinks =  DPALinks(fromDict: links)
+            self.resouceLinks =  newlinks
             
         }
         

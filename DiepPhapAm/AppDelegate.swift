@@ -12,15 +12,46 @@ import CoreData
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
+    
+    static let sharedInstance = AppDelegate()
+    var DPARed = UIColor(red: 99/255, green: 2/255, blue: 8/255, alpha: 1.0)
     var window: UIWindow?
-
+    var DPATabbarVC:UITabBarController?
+    var DPAViewVC:DPAViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewControllerWithIdentifier("DPAViewController") as! DPAViewController
+    var DPAFavoriteVC:DPAFavoriteViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewControllerWithIdentifier("DPAFavoriteViewController") as! DPAFavoriteViewController
+    
+    
+    var DPAMainTabbarVC:UITabBarController = UIStoryboard(name: "Main", bundle: nil).instantiateViewControllerWithIdentifier("DPAMainUITabbarController") as! UITabBarController
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
+        UIApplication.sharedApplication().statusBarStyle = .LightContent
         // Override point for customization after application launch.
         return true
     }
 
     func applicationWillResignActive(application: UIApplication) {
+        
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+
+        /*
+        if self.DPAFavoriteVC == nil
+        {
+            self.DPAFavoriteVC = storyboard.instantiateViewControllerWithIdentifier("DPAFavoriteViewController") as! DPAFavoriteViewController
+            DPAFavoriteViewController
+            
+        }
+*/
+        
+        /*
+        if self.DPAViewVC == nil
+        {
+            self.DPAViewVC = storyboard.instantiateViewControllerWithIdentifier("DPAViewController") as! DPAViewController
+            
+            
+            
+        }
+        */
+
         // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.
         // Use this method to pause ongoing tasks, disable timers, and throttle down OpenGL ES frame rates. Games should use this method to pause the game.
     }

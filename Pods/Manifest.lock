@@ -1,0 +1,26 @@
+PODS:
+  - GSKStretchyHeaderView (0.11.0):
+    - KVOController (~> 1.1)
+  - KVOController (1.1.0)
+  - SDWebImage (3.8.1):
+    - SDWebImage/Core (= 3.8.1)
+  - SDWebImage/Core (3.8.1)
+  - SWRevealViewController (2.3.0)
+  - TUSafariActivity (1.0.4)
+
+DEPENDENCIES:
+  - GSKStretchyHeaderView
+  - SDWebImage
+  - SWRevealViewController
+  - TUSafariActivity
+
+SPEC CHECKSUMS:
+  GSKStretchyHeaderView: a1cf458af8efe5350ffb306598be6b4d10fa0750
+  KVOController: 321b5fc59300fcaabd42c0f679baa7a27efbb2fd
+  SDWebImage: 35f9627a3e44b4f292a8a8ce6a531fa488239b91
+  SWRevealViewController: 6d3fd97f70112fd7cef9de14df4260eacce4c63a
+  TUSafariActivity: afc55a00965377939107ce4fdc7f951f62454546
+
+PODFILE CHECKSUM: 8e6a517d636527f92db73d848ea9a6a155c2a7b4
+
+COCOAPODS: 1.0.1

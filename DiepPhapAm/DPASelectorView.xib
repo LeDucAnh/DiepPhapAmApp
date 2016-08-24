@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="9532" systemVersion="15E65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9530"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="DPASelectorView" customModule="DiepPhapAm" customModuleProvider="target">
+            <connections>
+                <outlet property="ImageView" destination="vcH-Kr-zo3" id="kip-Na-slI"/>
+                <outlet property="TitleLabel" destination="aTZ-dF-jCC" id="gTm-Qn-hFF"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB">
+            <rect key="frame" x="0.0" y="0.0" width="444" height="690"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="arrowdown.png" translatesAutoresizingMaskIntoConstraints="NO" id="vcH-Kr-zo3">
+                    <rect key="frame" x="109" y="57" width="140" height="57"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="20" id="Vzs-sn-qJB"/>
+                        <constraint firstAttribute="width" constant="20" id="yIN-fI-Nen"/>
+                    </constraints>
+                </imageView>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aTZ-dF-jCC">
+                    <rect key="frame" x="34" y="75" width="42" height="21"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="21" id="ejC-Y4-Wjd"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                    <color key="textColor" red="0.99215686270000003" green="0.74117647060000003" blue="0.51372549020000002" alpha="1" colorSpace="calibratedRGB"/>
+                    <nil key="highlightedColor"/>
+                    <variation key="default">
+                        <mask key="constraints">
+                            <exclude reference="ejC-Y4-Wjd"/>
+                        </mask>
+                    </variation>
+                </label>
+            </subviews>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstItem="vcH-Kr-zo3" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="1o6-KH-xoR"/>
+                <constraint firstItem="aTZ-dF-jCC" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="EdX-d3-SKY"/>
+                <constraint firstItem="vcH-Kr-zo3" firstAttribute="leading" secondItem="aTZ-dF-jCC" secondAttribute="trailing" constant="10" id="MOO-IH-6CJ"/>
+                <constraint firstItem="aTZ-dF-jCC" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="N8d-iZ-Pyl"/>
+                <constraint firstAttribute="bottom" secondItem="vcH-Kr-zo3" secondAttribute="bottom" id="afe-k5-zF5"/>
+                <constraint firstAttribute="bottom" secondItem="aTZ-dF-jCC" secondAttribute="bottom" id="gjT-s0-vlL"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <point key="canvasLocation" x="157" y="524"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="arrowdown.png" width="96" height="96"/>
+    </resources>
+</document>

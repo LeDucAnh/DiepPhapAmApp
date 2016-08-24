@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="9532" systemVersion="15E65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9530"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" ambiguous="YES" id="iN0-l3-epB" customClass="DPASideMenuTableViewCell" customModule="DiepPhapAm" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="452" height="77"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GIk-2T-TAR">
+                    <rect key="frame" x="181" y="28" width="42" height="21"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="20" id="Qbq-cJ-UCg"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="29e-X0-wNz">
+                    <rect key="frame" x="13" y="1" width="129" height="75"/>
+                    <color key="tintColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstAttribute="width" secondItem="29e-X0-wNz" secondAttribute="height" multiplier="1:1" id="4oC-s3-lf5"/>
+                        <constraint firstAttribute="height" constant="60" id="PfG-67-pDz"/>
+                        <constraint firstAttribute="width" secondItem="29e-X0-wNz" secondAttribute="height" multiplier="43:25" id="lw8-E8-pzw"/>
+                        <constraint firstAttribute="height" constant="75" id="pYL-ZC-Wm8"/>
+                        <constraint firstAttribute="width" constant="60" id="wCm-wP-cp3"/>
+                        <constraint firstAttribute="width" secondItem="29e-X0-wNz" secondAttribute="height" multiplier="43:25" id="xy0-q3-cYy"/>
+                    </constraints>
+                    <variation key="default">
+                        <mask key="constraints">
+                            <exclude reference="PfG-67-pDz"/>
+                            <exclude reference="lw8-E8-pzw"/>
+                            <exclude reference="pYL-ZC-Wm8"/>
+                            <exclude reference="wCm-wP-cp3"/>
+                            <exclude reference="xy0-q3-cYy"/>
+                        </mask>
+                    </variation>
+                </imageView>
+            </subviews>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstAttribute="bottom" secondItem="GIk-2T-TAR" secondAttribute="bottom" constant="2" id="B1e-ds-GZ3"/>
+                <constraint firstItem="29e-X0-wNz" firstAttribute="height" secondItem="iN0-l3-epB" secondAttribute="height" multiplier="0.75" id="Fg1-dZ-Nhx"/>
+                <constraint firstItem="GIk-2T-TAR" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="afg-Fq-Vkf"/>
+                <constraint firstItem="GIk-2T-TAR" firstAttribute="leading" secondItem="29e-X0-wNz" secondAttribute="trailing" constant="30" id="c1e-Pc-DY5"/>
+                <constraint firstItem="29e-X0-wNz" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="cPY-Ix-p1C"/>
+                <constraint firstAttribute="bottom" secondItem="29e-X0-wNz" secondAttribute="bottom" id="fN4-jE-AWz"/>
+                <constraint firstItem="GIk-2T-TAR" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="2" id="gF0-Hg-k6V"/>
+                <constraint firstItem="GIk-2T-TAR" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="nlO-Y7-mnH"/>
+                <constraint firstItem="29e-X0-wNz" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="rUe-lv-Pm5"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <variation key="default">
+                <mask key="constraints">
+                    <exclude reference="B1e-ds-GZ3"/>
+                    <exclude reference="afg-Fq-Vkf"/>
+                    <exclude reference="gF0-Hg-k6V"/>
+                </mask>
+            </variation>
+            <connections>
+                <outlet property="DPASideMenuTableViewCellMenuImgView" destination="29e-X0-wNz" id="ogg-DV-MRF"/>
+                <outlet property="DPASideMenuTableViewCellTitleLabel" destination="GIk-2T-TAR" id="KdB-8z-SxK"/>
+            </connections>
+            <point key="canvasLocation" x="126" y="-210.5"/>
+        </view>
+    </objects>
+</document>

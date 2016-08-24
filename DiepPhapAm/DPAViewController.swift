@@ -13,7 +13,7 @@ import TUSafariActivity
 
 class DPAViewController: UIViewController ,UICollectionViewDataSource,UICollectionViewDelegate ,UICollectionViewDelegateFlowLayout,DPASelectorViewDelegate,ResourceCollectionViewCellDelegate,UITableViewDataSource,UITableViewDelegate,DPAResourceCellOptionPopUpViewDelegate{
     
-    
+    var tapGesture:UITapGestureRecognizer?
     @IBOutlet weak var CategorySelectionTableView: UITableView!
     @IBOutlet weak var optionView: DPAResourceCellOptionPopUpView!
     @IBOutlet weak var selectorView: DPASelectorView!
@@ -36,19 +36,17 @@ class DPAViewController: UIViewController ,UICollectionViewDataSource,UICollecti
     //Changing Status Bar
     override func viewDidLayoutSubviews() {
         
+        if self.optionView != nil
+        {
         self.optionView.frame = CGRectMake(self.optionView.viewPoint.x, self.optionView.viewPoint.y, self.optionView.frame.size.width, self.optionView.frame.size.height)
-        
+        }
     }
     
   
     func DPASelectorViewDidTouch()
     {
-        print("asdf")
-        if self.CategorySelectionTableView.alpha == 1.0
-        {
-            self.CategorySelectionTableView.alpha = 0.0
-            return
-        }
+    
+        
         let imagePickerController = UIImagePickerController()
      //   imagePickerController.delegate = self
         imagePickerController.sourceType = UIImagePickerControllerSourceType.SavedPhotosAlbum
@@ -65,7 +63,11 @@ class DPAViewController: UIViewController ,UICollectionViewDataSource,UICollecti
         
     }
     override func viewDidAppear(animated: Bool) {
+        
+        if self.optionView != nil
+        {
         self.optionView.alpha = 0.0
+        }
         if self.ResourceCollectionView != nil
         {
         self.ResourceCollectionView.reloadData()
@@ -73,6 +75,9 @@ class DPAViewController: UIViewController ,UICollectionViewDataSource,UICollecti
     }
     override func viewDidLoad() {
         super.viewDidLoad()
+      
+        
+
     
         AppDelegate.sharedInstance.DPATabbarVC =  self.tabBarController
       AppDelegate.sharedInstance.DPAViewVC =  self
@@ -445,16 +450,29 @@ class DPAViewController: UIViewController ,UICollectionViewDataSource,UICollecti
     
     func addTapGesturetoView()
     {
-        var tap = UITapGestureRecognizer(target: self, action : "handleTap:")
-        tap.numberOfTapsRequired = 1
-        self.ResourceCollectionView.addGestureRecognizer(tap)
+        
+        
+        self.tapGesture = UITapGestureRecognizer(target: self, action : "handleTap:")
+        tapGesture!.numberOfTapsRequired = 1
+        if ((self.ResourceCollectionView.gestureRecognizers?.contains(self.tapGesture!)) != nil)
+        {
+        return 
+        }
+        self.ResourceCollectionView.addGestureRecognizer(tapGesture!)
         
 
     }
     //collectionviewScrollViewDelegate
     func scrollViewDidScroll(scrollView: UIScrollView) {
+        
+      
         if scrollView == self.ResourceCollectionView
         {
+            
+            if self.tapGesture != nil
+            {
+                self.handleTap(self.tapGesture!)
+            }
             self.optionView.alpha = 0.0
             
             
@@ -462,6 +480,7 @@ class DPAViewController: UIViewController ,UICollectionViewDataSource,UICollecti
             self.CategorySelectionTableView.alpha = 0.0
             }
         }
+        
     }
     
     //collectionviewDatasource
@@ -512,6 +531,7 @@ class DPAViewController: UIViewController ,UICollectionViewDataSource,UICollecti
     func handleTap(sender: UITapGestureRecognizer)
     {
         print("aa")
+        
         self.optionView.alpha = 0.0
         if self.CategorySelectionTableView != nil
         {

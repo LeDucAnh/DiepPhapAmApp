@@ -302,7 +302,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="awV-SH-bn9" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="224" y="-1121"/>
+            <point key="canvasLocation" x="-672" y="2015"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="VWC-bP-Flg">
@@ -487,37 +487,21 @@
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="ResourceCollectionView" destination="jKU-au-fE8" id="67n-jb-6lN"/>
-                        <outlet property="optionView" destination="eSd-Xo-49Z" id="CMd-88-IoX"/>
+                        <outlet property="optionView" destination="eSd-Xo-49Z" id="s4p-uD-zqN"/>
                         <outlet property="sideBarButton" destination="M6H-K4-gfL" id="5Z9-r5-4fz"/>
-                        <segue destination="QHr-SI-2FP" kind="modal" identifier="acb" id="tk5-pf-BzL"/>
+                        <segue destination="6E7-TU-xJT" kind="modal" identifier="acb" customClass="SWRevealViewControllerSegueSetController" id="cSl-lc-8ia"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="KOt-kG-ylB" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-3139" y="735"/>
-        </scene>
-        <!--View Controller-->
-        <scene sceneID="tzU-tx-B0P">
-            <objects>
-                <viewController id="QHr-SI-2FP" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="mU4-7H-p5S"/>
-                        <viewControllerLayoutGuide type="bottom" id="kcG-xu-aFN"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="W6g-RC-krt">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                    </view>
-                    <navigationItem key="navigationItem" id="zSr-uq-slS"/>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="0vz-uz-3FK" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="-1969" y="754"/>
+            <point key="canvasLocation" x="-1971" y="855"/>
         </scene>
     </scenes>
     <resources>
         <image name="back.png" width="128" height="128"/>
         <image name="menu.png" width="512" height="512"/>
     </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="cSl-lc-8ia"/>
+    </inferredMetricsTieBreakers>
 </document>

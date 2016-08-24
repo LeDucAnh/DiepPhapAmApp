@@ -127,6 +127,50 @@ class DPAFavoriteViewController: DPAViewController {
     return cell
     
     }
+   override func collectionView(collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAtIndexPath indexPath: NSIndexPath) -> CGSize {
+        var  numberOfColumns: CGFloat = 2.0
+        
+        
+        let resouce =  self.resourceArray?.objectAtIndex(indexPath.row) as! DPAResource
+        
+        
+        if UIDevice.currentDevice().orientation == UIDeviceOrientation.LandscapeLeft || UIDevice.currentDevice().orientation == UIDeviceOrientation.LandscapeRight
+        {
+            numberOfColumns = 3
+            
+        }
+        if UIDevice.currentDevice().userInterfaceIdiom  ==  UIUserInterfaceIdiom.Pad {
+            numberOfColumns += 1
+        }
+        
+        
+        
+        
+        let itemWidth = (CGRectGetWidth(self.ResourceCollectionView!.frame) - (numberOfColumns - 1)) / numberOfColumns  - 15.0
+        
+        
+        let font =  UIFont.systemFontOfSize(14.0)
+        
+        var commentHeight = 80.0
+        
+        
+        //   let TitleHeight = self.heightForComment(font, width: itemWidth,comment: resouce.resourceTitle)
+        //  let bookHeight = 21.0
+        //  print(TitleHeight)
+        
+        
+        
+        //  commentHeight = Double(TitleHeight) + bookHeight + 5.0
+        
+        
+        
+        
+        
+        self.cellSize = CGSizeMake(itemWidth, itemWidth + CGFloat(60.0))
+        
+        
+        return self.cellSize!
+    }
     
 
     override  func DPAResourceCellOptionPopUpViewDidTapOption(index:DPAResourceCellOptionPopUpViewOption)

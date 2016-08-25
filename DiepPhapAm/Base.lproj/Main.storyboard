@@ -126,6 +126,7 @@
                                 </constraints>
                                 <variation key="default">
                                     <mask key="constraints">
+                                        <exclude reference="Ge0-qh-Vap"/>
                                         <exclude reference="R6y-6s-n3t"/>
                                     </mask>
                                 </variation>
@@ -210,20 +211,24 @@
                             <constraint firstItem="2wX-hg-NJW" firstAttribute="leading" secondItem="oCR-vr-Igw" secondAttribute="leadingMargin" constant="-20" id="E0S-Ai-jX7"/>
                             <constraint firstAttribute="trailingMargin" secondItem="yXP-tq-yyU" secondAttribute="trailing" constant="20" id="FBU-Bx-SMM"/>
                             <constraint firstItem="HUT-3R-uV6" firstAttribute="width" secondItem="oCR-vr-Igw" secondAttribute="width" multiplier="0.5" id="J8m-JV-69d"/>
+                            <constraint firstItem="yXP-tq-yyU" firstAttribute="centerX" secondItem="oCR-vr-Igw" secondAttribute="centerX" id="KOI-M6-ZKT"/>
                             <constraint firstItem="yXP-tq-yyU" firstAttribute="top" secondItem="uLG-u4-ACN" secondAttribute="bottom" id="Lvk-91-e26"/>
+                            <constraint firstItem="yXP-tq-yyU" firstAttribute="width" secondItem="oCR-vr-Igw" secondAttribute="width" multiplier="0.8" id="Ns5-fG-M4c"/>
                             <constraint firstItem="yXP-tq-yyU" firstAttribute="centerX" secondItem="oCR-vr-Igw" secondAttribute="centerX" id="ZBm-Ar-5EB"/>
                             <constraint firstItem="HUT-3R-uV6" firstAttribute="top" secondItem="uLG-u4-ACN" secondAttribute="bottom" id="c7Y-XV-7lf"/>
                             <constraint firstItem="2wX-hg-NJW" firstAttribute="top" secondItem="HUT-3R-uV6" secondAttribute="bottom" id="c86-Gc-wur"/>
                             <constraint firstItem="1Bp-CW-tYV" firstAttribute="top" secondItem="2wX-hg-NJW" secondAttribute="bottom" id="cEj-nA-j4Q"/>
                             <constraint firstItem="HUT-3R-uV6" firstAttribute="height" secondItem="oCR-vr-Igw" secondAttribute="height" id="dA7-3S-21G"/>
-                            <constraint firstItem="yXP-tq-yyU" firstAttribute="height" secondItem="oCR-vr-Igw" secondAttribute="height" multiplier="0.5" id="ekv-OW-0p9"/>
+                            <constraint firstItem="yXP-tq-yyU" firstAttribute="height" secondItem="oCR-vr-Igw" secondAttribute="height" multiplier="0.6" id="ekv-OW-0p9"/>
                             <constraint firstAttribute="trailingMargin" secondItem="uLG-u4-ACN" secondAttribute="trailing" constant="-20" id="erd-oe-j3D"/>
+                            <constraint firstItem="yXP-tq-yyU" firstAttribute="centerY" secondItem="oCR-vr-Igw" secondAttribute="centerY" id="h7U-la-Ico"/>
                             <constraint firstItem="2wX-hg-NJW" firstAttribute="top" secondItem="uLG-u4-ACN" secondAttribute="bottom" id="jDn-4h-yvy"/>
                             <constraint firstItem="HUT-3R-uV6" firstAttribute="leading" secondItem="oCR-vr-Igw" secondAttribute="leading" constant="10" id="lSw-a3-doh"/>
                             <constraint firstItem="yXP-tq-yyU" firstAttribute="top" secondItem="HUT-3R-uV6" secondAttribute="bottom" constant="10" id="lWL-iJ-YuW"/>
                             <constraint firstItem="yXP-tq-yyU" firstAttribute="centerY" secondItem="oCR-vr-Igw" secondAttribute="centerY" id="n6y-T0-Tvh"/>
                             <constraint firstItem="uLG-u4-ACN" firstAttribute="top" secondItem="oCR-vr-Igw" secondAttribute="topMargin" id="tq6-2d-kZJ"/>
                             <constraint firstItem="yXP-tq-yyU" firstAttribute="leading" secondItem="oCR-vr-Igw" secondAttribute="leadingMargin" constant="12" id="tte-S0-k7z"/>
+                            <constraint firstItem="yXP-tq-yyU" firstAttribute="top" secondItem="uLG-u4-ACN" secondAttribute="bottom" constant="60" id="xxA-eb-duQ"/>
                         </constraints>
                         <variation key="default">
                             <mask key="constraints">
@@ -234,7 +239,10 @@
                                 <exclude reference="c86-Gc-wur"/>
                                 <exclude reference="FBU-Bx-SMM"/>
                                 <exclude reference="Lvk-91-e26"/>
+                                <exclude reference="ZBm-Ar-5EB"/>
+                                <exclude reference="h7U-la-Ico"/>
                                 <exclude reference="lWL-iJ-YuW"/>
+                                <exclude reference="n6y-T0-Tvh"/>
                                 <exclude reference="tte-S0-k7z"/>
                             </mask>
                         </variation>

@@ -95,7 +95,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qXI-IG-F2V" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-527" y="512"/>
+            <point key="canvasLocation" x="-1151" y="480"/>
         </scene>
         <!--Thư Viện-->
         <scene sceneID="vK7-Wa-OAk">
@@ -338,7 +338,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="awV-SH-bn9" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-754" y="1947"/>
+            <point key="canvasLocation" x="-894" y="1867"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="VWC-bP-Flg">
@@ -542,7 +542,7 @@
                         <outlet property="ResourceCollectionView" destination="jKU-au-fE8" id="67n-jb-6lN"/>
                         <outlet property="optionView" destination="eSd-Xo-49Z" id="s4p-uD-zqN"/>
                         <outlet property="sideBarButton" destination="M6H-K4-gfL" id="5Z9-r5-4fz"/>
-                        <segue destination="6E7-TU-xJT" kind="modal" identifier="acb" customClass="SWRevealViewControllerSegueSetController" id="cSl-lc-8ia"/>
+                        <segue destination="6E7-TU-xJT" kind="modal" identifier="fromFavoriteToDetailSegue" id="cSl-lc-8ia"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="KOt-kG-ylB" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -555,6 +555,6 @@
         <image name="menu.png" width="512" height="512"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="lAf-3k-Pr9"/>
+        <segue reference="cSl-lc-8ia"/>
     </inferredMetricsTieBreakers>
 </document>

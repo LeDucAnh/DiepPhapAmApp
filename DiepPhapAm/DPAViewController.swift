@@ -334,7 +334,14 @@ class DPAViewController: UIViewController ,UICollectionViewDataSource,UICollecti
     func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
         
         
-        if self.optionView.alpha == 1.0 || self.CategorySelectionTableView.alpha == 1.0
+        if self.CategorySelectionTableView != nil
+        {
+            if self.CategorySelectionTableView.alpha == 1.0
+            {
+            return
+            }
+        }
+        if self.optionView.alpha == 1.0
         {
             return
         }

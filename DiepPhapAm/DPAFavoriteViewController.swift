@@ -173,6 +173,52 @@ class DPAFavoriteViewController: DPAViewController {
         return self.cellSize!
     }
     
+  override  func collectionView(collectionView: UICollectionView,
+        layout collectionViewLayout: UICollectionViewLayout,
+        insetForSectionAtIndex section: Int) -> UIEdgeInsets {
+            
+            
+            
+             let sectionInsets = UIEdgeInsets(top: 10.0, left: 10.0, bottom: 10.0, right: 10.0)
+            return sectionInsets
+    }
+   override func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
+        
+        
+        if self.CategorySelectionTableView != nil
+        {
+            if self.CategorySelectionTableView.alpha == 1.0
+            {
+                return
+            }
+        }
+        if self.optionView.alpha == 1.0
+        {
+            return
+        }
+        
+        self.performSegueWithIdentifier("fromFavoriteToDetailSegue", sender: self.resourceArray?.objectAtIndex(indexPath.row))
+        
+        
+        
+    }
+
+    
+    override func prepareForSegue(segue: UIStoryboardSegue!, sender: AnyObject!) {
+        if (segue.identifier == "fromFavoriteToDetailSegue") {
+            
+            
+            
+            var destinationVC = segue!.destinationViewController as! DPAResourceDetailViewController
+            
+            let resource = sender as! DPAResource
+            print(resource.resouceLinks!.DPALinksThumbnail)
+            
+            destinationVC.exploringResource = sender as! DPAResource
+            
+            
+        }
+    }
 
     override  func DPAResourceCellOptionPopUpViewDidTapOption(index:DPAResourceCellOptionPopUpViewOption)
     {

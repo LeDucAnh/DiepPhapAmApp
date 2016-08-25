@@ -10,8 +10,10 @@ import Foundation
 import UIKit
 import SDWebImage
 import TUSafariActivity
+import SWRevealViewController
 
-class DPAViewController: UIViewController ,UICollectionViewDataSource,UICollectionViewDelegate ,UICollectionViewDelegateFlowLayout,DPASelectorViewDelegate,ResourceCollectionViewCellDelegate,UITableViewDataSource,UITableViewDelegate,DPAResourceCellOptionPopUpViewDelegate{
+class DPAViewController: UIViewController ,UICollectionViewDataSource,UICollectionViewDelegate ,UICollectionViewDelegateFlowLayout,DPASelectorViewDelegate,ResourceCollectionViewCellDelegate,UITableViewDataSource,UITableViewDelegate,DPAResourceCellOptionPopUpViewDelegate,SWRevealViewControllerDelegate{
+    @IBOutlet weak var DPAViewControllerTitleLabel: UILabel!
     
     var tapGesture:UITapGestureRecognizer?
     @IBOutlet weak var CategorySelectionTableView: UITableView!
@@ -27,25 +29,30 @@ class DPAViewController: UIViewController ,UICollectionViewDataSource,UICollecti
     var currentPage = 1
     
 
-    private let sectionInsets = UIEdgeInsets(top: 10.0, left: 10.0, bottom: 10.0, right: 10.0)
+    private let sectionInsets = UIEdgeInsets(top: 40.0, left: 10.0, bottom: 10.0, right: 10.0)
 
     var resourceArray:NSMutableArray?
     var categoryArray:NSMutableArray?
     var categoryParentArray = NSMutableArray()
     var categoryNumofRows = NSMutableArray()
     //Changing Status Bar
+  
+ 
     override func viewDidLayoutSubviews() {
         
         if self.optionView != nil
         {
         self.optionView.frame = CGRectMake(self.optionView.viewPoint.x, self.optionView.viewPoint.y, self.optionView.frame.size.width, self.optionView.frame.size.height)
         }
+       
+        
     }
     
   
     func DPASelectorViewDidTouch()
     {
-    
+        
+        self.addTapGesturetoView()
         
         let imagePickerController = UIImagePickerController()
      //   imagePickerController.delegate = self
@@ -56,36 +63,47 @@ class DPAViewController: UIViewController ,UICollectionViewDataSource,UICollecti
        //popOver.presentPopoverFromRect(self.selectorView.frame, inView: self.view, permittedArrowDirections: UIPopoverArrowDirection.Any, animated: true)
         
         self.CategorySelectionTableView.alpha =  1.0
-        self.addTapGesturetoView()
+       
                 
     }
+    
     override func viewWillAppear(animated: Bool) {
+        self.DPAViewControllerTitleLabel.text = "Thư Viện"
+        
         
     }
+    
     override func viewDidAppear(animated: Bool) {
         
         if self.optionView != nil
         {
-        self.optionView.alpha = 0.0
+        self.optionView.hide()
         }
         if self.ResourceCollectionView != nil
         {
         self.ResourceCollectionView.reloadData()
         }// self.CategorySelectionTableView.alpha = 0.0
     }
+   
     override func viewDidLoad() {
         super.viewDidLoad()
       
-        
 
-    
+     self.selectorView.view.frame = CGRectMake(10.0, 0, self.ResourceCollectionView.frame.size.width/2, 30.0)
+      
+        self.ResourceCollectionView.addSubview(self.selectorView.view)
+        self.ResourceCollectionView.bringSubviewToFront(self.selectorView.view)
+        
+        
+        
+        
         AppDelegate.sharedInstance.DPATabbarVC =  self.tabBarController
       AppDelegate.sharedInstance.DPAViewVC =  self
         self.view.bringSubviewToFront(self.optionView)
         self.view.bringSubviewToFront(self.CategorySelectionTableView)
         self.view.sendSubviewToBack(self.ResourceCollectionView)
 
-        self.optionView.alpha = 0.0
+        self.optionView.hide()
         self.CategorySelectionTableView.alpha = 0.0
                self.selectorView.TitleLabel.text = "Tác phẩm mới"
         self.selectorView.delegate = self
@@ -127,29 +145,15 @@ class DPAViewController: UIViewController ,UICollectionViewDataSource,UICollecti
         
         }
         )
-              //  self.CategoryButton   = UIButton(type: UIButtonType.System) as UIButton! //this is Swift2.0 in this place use your code
-       // CategoryButton.frame =  CGRectMake(2, 74, 140, 40)
-        /*
-        self.CategoryButton.tintColor = UIColor.whiteColor()
-        self.CategoryButton.setImage(UIImage(named:"arrowdown.png"), forState: UIControlState.Normal)
-        self.CategoryButton.imageEdgeInsets = UIEdgeInsets(top: 6,left: 100,bottom: 6,right: 0)
-        self.CategoryButton.titleEdgeInsets = UIEdgeInsets(top: 0,left: -(self.CategoryButton.titleLabel?.frame.size.width)!,bottom: 0,right: 50)
-        self.CategoryButton.titleLabel?.frame.size = CGSizeMake(100, (self.CategoryButton.titleLabel?.frame.size.height)!)
-        self.CategoryButton.setTitle("Tác Phẩm Mới", forState: UIControlState.Normal)
-        self.CategoryButton.titleLabel?.font = UIFont.systemFontOfSize(15.0)
-       // self.CategoryButton.layer.borderWidth = 1.0
-        self.CategoryButton.backgroundColor = UIColor.redColor()
-       // self.CategoryButton.layer.borderColor = UIColor.whiteColor().CGColor
-        self.CategoryButton.addTarget(self, action: Selector("showSortTbl"), forControlEvents: UIControlEvents.TouchUpInside)
-       // self.view.addSubview(btnSort)
-        */
         
         let revealVC = self.revealViewController()
         if ((revealVC) != nil)
         {
             self.sideBarButton.addTarget(self.revealViewController(), action: "revealToggle:", forControlEvents: UIControlEvents.TouchUpInside)
+        
             
         }
+        
         
         //self.ResourceCollectionView.registerClass(ResourceCollectionViewCell.self, forCellWithReuseIdentifier: "Cell")
         self.ResourceCollectionView.registerNib(UINib(nibName: "ResourceCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "Cell")
@@ -194,20 +198,6 @@ class DPAViewController: UIViewController ,UICollectionViewDataSource,UICollecti
     
 
     
-    /*- (CGFloat)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout minimumInteritemSpacingForSectionAtIndex:(NSInteger)section {
-    return 2.0;
-    }
-    
-    - (CGFloat)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout minimumLineSpacingForSectionAtIndex:(NSInteger)section {
-    return 2.0;
-    }
-    
-    // Layout: Set Edges
-    - (UIEdgeInsets)collectionView:
-    (UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout insetForSectionAtIndex:(NSInteger)section {
-    // return UIEdgeInsetsMake(0,8,0,8);  // top, left, bottom, right
-    return UIEdgeInsetsMake(0,0,0,0);  // top, left, bottom, right
-    }*/
     
     
     
@@ -344,6 +334,11 @@ class DPAViewController: UIViewController ,UICollectionViewDataSource,UICollecti
     func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
         
         
+        if self.optionView.alpha == 1.0 || self.CategorySelectionTableView.alpha == 1.0
+        {
+            return
+        }
+        
         self.performSegueWithIdentifier("acb", sender: self.resourceArray?.objectAtIndex(indexPath.row))
         
         
@@ -374,7 +369,7 @@ class DPAViewController: UIViewController ,UICollectionViewDataSource,UICollecti
     func DPAResourceCellOptionPopUpViewDidTapOption(index:DPAResourceCellOptionPopUpViewOption)
     {
         print(index)
-        self.optionView.alpha = 0.0
+        self.optionView.hide()
          let resource:DPAResource = self.resourceArray?.objectAtIndex(self.optionView.tag) as! DPAResource
         if index == DPAResourceCellOptionPopUpViewOption.Share
         {
@@ -414,23 +409,17 @@ class DPAViewController: UIViewController ,UICollectionViewDataSource,UICollecti
     }
     func DPAResourceCellOptionButtonDidTouch(sender:ResourceCollectionViewCell)
     {
-        self.optionView.tag =  sender.tag
         
-
-      //  UICollectionViewLayoutAttributes * theAttributes = [collectionView layoutAttributesForItemAtIndexPath:indexPath];
-        
-        //CGRect cellFrameInSuperview = [collectionView convertRect:theAttributes.frame toView:[collectionView superview]];
-        let resource:DPAResource = self.resourceArray?.objectAtIndex(self.optionView.tag) as! DPAResource
-        
-     
-        let theAttributes = self.ResourceCollectionView.layoutAttributesForItemAtIndexPath(NSIndexPath(forRow: sender.tag, inSection: 0))
-        let cellPointInSuperview =  self.ResourceCollectionView.convertPoint((theAttributes?.frame.origin)!, toView: self.view)
-        
-        print(cellPointInSuperview)
-        self.optionView.delegate = self
-        self.optionView.frame = CGRectMake(cellPointInSuperview.x + self.cellSize!.width -  self.optionView.frame.size.width, cellPointInSuperview.y + 40, 100, 80)
-      self.optionView.viewPoint = self.optionView.frame.origin
         self.addTapGesturetoView()
+        self.optionView.tag =  sender.tag
+        self.optionView.hide()
+
+        let resource:DPAResource = self.resourceArray?.objectAtIndex(self.optionView.tag) as! DPAResource
+      
+        //[UIView setAnimationsEnabled:NO];
+       // [_button setTitle:@"title" forState:UIControlStateNormal];
+       // [UIView setAnimationsEnabled:YES];
+       UIView.setAnimationsEnabled(false)
         
         if  DPACoreDatabase.shareInstance.checkIfResourceExistInDatabase(resource) == true
         {
@@ -442,8 +431,24 @@ class DPAViewController: UIViewController ,UICollectionViewDataSource,UICollecti
         {
             self.optionView.removeLikeButton.setTitle("Thích", forState: .Normal)
         }
+        UIView.setAnimationsEnabled(true)
+     
+        let theAttributes = self.ResourceCollectionView.layoutAttributesForItemAtIndexPath(NSIndexPath(forRow: sender.tag, inSection: 0))
+        let cellPointInSuperview =  self.ResourceCollectionView.convertPoint((theAttributes?.frame.origin)!, toView: self.view)
         
-    self.optionView.alpha = 1.0
+        print(cellPointInSuperview)
+        self.optionView.delegate = self
+        self.optionView.frame = CGRectMake(cellPointInSuperview.x + self.cellSize!.width -  self.optionView.frame.size.width, cellPointInSuperview.y + 40, 100, 80)
+      self.optionView.viewPoint = self.optionView.frame.origin
+        
+        let delayTime = dispatch_time(DISPATCH_TIME_NOW, Int64(0.2 * Double(NSEC_PER_SEC)))
+        dispatch_after(delayTime, dispatch_get_main_queue()) {
+           self.optionView.alpha = 1.0
+        }
+        
+        
+   
+    
         
     
     }
@@ -451,13 +456,34 @@ class DPAViewController: UIViewController ,UICollectionViewDataSource,UICollecti
     func addTapGesturetoView()
     {
         
+    
+        
+        if self.tapGesture != nil
+        {
+        if ((self.ResourceCollectionView.gestureRecognizers?.contains(self.tapGesture!)) != nil)
+        {
+            self.ResourceCollectionView.removeGestureRecognizer(self.tapGesture!)
+        }
+        
+        }
+
+        
+        
+
         
         self.tapGesture = UITapGestureRecognizer(target: self, action : "handleTap:")
         tapGesture!.numberOfTapsRequired = 1
+        
+        print(self.ResourceCollectionView.gestureRecognizers?.count)
+      
+        
+        /*
         if ((self.ResourceCollectionView.gestureRecognizers?.contains(self.tapGesture!)) != nil)
         {
         return 
         }
+*/
+      
         self.ResourceCollectionView.addGestureRecognizer(tapGesture!)
         
 
@@ -471,13 +497,13 @@ class DPAViewController: UIViewController ,UICollectionViewDataSource,UICollecti
             
             if self.tapGesture != nil
             {
-                self.handleTap(self.tapGesture!)
+               // self.handleTap(self.tapGesture!)
             }
-            self.optionView.alpha = 0.0
+            self.optionView.hide()
             
             
             if    self.CategorySelectionTableView != nil{
-            self.CategorySelectionTableView.alpha = 0.0
+           self.CategorySelectionTableView.alpha = 0.0
             }
         }
         
@@ -516,13 +542,13 @@ class DPAViewController: UIViewController ,UICollectionViewDataSource,UICollecti
         
         self.ResourceCollectionView.performBatchUpdates(nil, completion: nil)
     
-        self.optionView.alpha = 0.0
+        self.optionView.hide()
     }
     //touch
     override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?) {
         print("ddsaf")
         
-        self.optionView.alpha = 0.0
+        self.optionView.hide()
         if self.CategorySelectionTableView != nil
         {
         self.CategorySelectionTableView.alpha = 0.0
@@ -530,15 +556,22 @@ class DPAViewController: UIViewController ,UICollectionViewDataSource,UICollecti
     }
     func handleTap(sender: UITapGestureRecognizer)
     {
-        print("aa")
+   
         
-        self.optionView.alpha = 0.0
+        
+        
+        self.optionView.hide()
         if self.CategorySelectionTableView != nil
         {
         self.CategorySelectionTableView.alpha = 0.0
         }
-
-        self.ResourceCollectionView.removeGestureRecognizer(sender)
+        
+        
+        if self.tapGesture != nil
+        {
+        self.ResourceCollectionView.removeGestureRecognizer(self.tapGesture!)
+        }
+       
     }
     //CategorySelectionTableView Datasource + Delegate
       func numberOfSectionsInTableView(tableView: UITableView) -> Int // Default is 1 if not implemented
@@ -626,6 +659,14 @@ class DPAViewController: UIViewController ,UICollectionViewDataSource,UICollecti
             
             
             cell.DPACategoryResourceCountLabel.text = String(CategoryModel.CategoryResourceCount!)
+            if indexPath.row == 0
+            {
+                 cell.DPACategoryTitleLabel.textColor = UIColor.lightGrayColor()
+            }
+            else
+            {
+                cell.DPACategoryTitleLabel.textColor = UIColor.blackColor()
+            }
             return cell
             
         }

@@ -3,6 +3,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9530"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
     </dependencies>
@@ -120,6 +121,7 @@
                                 <rect key="frame" x="58" y="172" width="240" height="91"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
+                                    <constraint firstAttribute="width" secondItem="yXP-tq-yyU" secondAttribute="height" multiplier="1:1" id="Ge0-qh-Vap"/>
                                     <constraint firstAttribute="height" constant="100" id="R6y-6s-n3t"/>
                                 </constraints>
                                 <variation key="default">
@@ -149,9 +151,9 @@
                                     </collectionViewCell>
                                 </cells>
                             </collectionView>
-                            <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="HUT-3R-uV6" customClass="DPASelectorView" customModule="DiepPhapAm" customModuleProvider="target">
+                            <view contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="HUT-3R-uV6" customClass="DPASelectorView" customModule="DiepPhapAm" customModuleProvider="target">
                                 <rect key="frame" x="35" y="107" width="240" height="23"/>
-                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <color key="backgroundColor" red="1" green="0.5" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" id="r0M-7E-Avd"/>
                                 </constraints>
@@ -169,19 +171,33 @@
                                             <color key="titleColor" red="0.92941176469999998" green="0.92941176469999998" blue="0.92941176469999998" alpha="1" colorSpace="calibratedRGB"/>
                                         </state>
                                     </button>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Thư Viện" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lCE-xs-qcw">
+                                        <rect key="frame" x="279" y="43" width="42" height="21"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="21" id="HQk-Pp-xTR"/>
+                                            <constraint firstAttribute="width" constant="80" id="tpL-OX-cE1"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                        <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
                                 </subviews>
                                 <color key="backgroundColor" red="0.38823529410000002" green="0.0078431372550000003" blue="0.031372549020000001" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
+                                    <constraint firstItem="lCE-xs-qcw" firstAttribute="centerX" secondItem="uLG-u4-ACN" secondAttribute="centerX" id="1Wf-Ga-ozy"/>
                                     <constraint firstItem="zBU-fg-419" firstAttribute="top" secondItem="uLG-u4-ACN" secondAttribute="top" constant="4" id="Ndr-B5-g1e"/>
                                     <constraint firstAttribute="bottom" secondItem="zBU-fg-419" secondAttribute="bottom" constant="4" id="Owr-sG-RtD"/>
                                     <constraint firstItem="zBU-fg-419" firstAttribute="leading" secondItem="uLG-u4-ACN" secondAttribute="leading" constant="25" id="Xfp-W5-vnX"/>
                                     <constraint firstAttribute="height" constant="60" id="c58-2G-tRR"/>
+                                    <constraint firstAttribute="bottom" secondItem="lCE-xs-qcw" secondAttribute="bottom" constant="10" id="eF1-JH-YnG"/>
                                     <constraint firstItem="zBU-fg-419" firstAttribute="top" secondItem="uLG-u4-ACN" secondAttribute="top" constant="15" id="gct-Wk-vux"/>
+                                    <constraint firstItem="lCE-xs-qcw" firstAttribute="centerY" secondItem="uLG-u4-ACN" secondAttribute="centerY" id="x2D-Ks-OeH"/>
                                 </constraints>
                                 <variation key="default">
                                     <mask key="constraints">
                                         <exclude reference="Ndr-B5-g1e"/>
                                         <exclude reference="gct-Wk-vux"/>
+                                        <exclude reference="x2D-Ks-OeH"/>
                                     </mask>
                                 </variation>
                             </view>
@@ -194,21 +210,32 @@
                             <constraint firstItem="2wX-hg-NJW" firstAttribute="leading" secondItem="oCR-vr-Igw" secondAttribute="leadingMargin" constant="-20" id="E0S-Ai-jX7"/>
                             <constraint firstAttribute="trailingMargin" secondItem="yXP-tq-yyU" secondAttribute="trailing" constant="20" id="FBU-Bx-SMM"/>
                             <constraint firstItem="HUT-3R-uV6" firstAttribute="width" secondItem="oCR-vr-Igw" secondAttribute="width" multiplier="0.5" id="J8m-JV-69d"/>
+                            <constraint firstItem="yXP-tq-yyU" firstAttribute="top" secondItem="uLG-u4-ACN" secondAttribute="bottom" id="Lvk-91-e26"/>
+                            <constraint firstItem="yXP-tq-yyU" firstAttribute="centerX" secondItem="oCR-vr-Igw" secondAttribute="centerX" id="ZBm-Ar-5EB"/>
                             <constraint firstItem="HUT-3R-uV6" firstAttribute="top" secondItem="uLG-u4-ACN" secondAttribute="bottom" id="c7Y-XV-7lf"/>
                             <constraint firstItem="2wX-hg-NJW" firstAttribute="top" secondItem="HUT-3R-uV6" secondAttribute="bottom" id="c86-Gc-wur"/>
                             <constraint firstItem="1Bp-CW-tYV" firstAttribute="top" secondItem="2wX-hg-NJW" secondAttribute="bottom" id="cEj-nA-j4Q"/>
                             <constraint firstItem="HUT-3R-uV6" firstAttribute="height" secondItem="oCR-vr-Igw" secondAttribute="height" id="dA7-3S-21G"/>
                             <constraint firstItem="yXP-tq-yyU" firstAttribute="height" secondItem="oCR-vr-Igw" secondAttribute="height" multiplier="0.5" id="ekv-OW-0p9"/>
                             <constraint firstAttribute="trailingMargin" secondItem="uLG-u4-ACN" secondAttribute="trailing" constant="-20" id="erd-oe-j3D"/>
+                            <constraint firstItem="2wX-hg-NJW" firstAttribute="top" secondItem="uLG-u4-ACN" secondAttribute="bottom" id="jDn-4h-yvy"/>
                             <constraint firstItem="HUT-3R-uV6" firstAttribute="leading" secondItem="oCR-vr-Igw" secondAttribute="leading" constant="10" id="lSw-a3-doh"/>
                             <constraint firstItem="yXP-tq-yyU" firstAttribute="top" secondItem="HUT-3R-uV6" secondAttribute="bottom" constant="10" id="lWL-iJ-YuW"/>
+                            <constraint firstItem="yXP-tq-yyU" firstAttribute="centerY" secondItem="oCR-vr-Igw" secondAttribute="centerY" id="n6y-T0-Tvh"/>
                             <constraint firstItem="uLG-u4-ACN" firstAttribute="top" secondItem="oCR-vr-Igw" secondAttribute="topMargin" id="tq6-2d-kZJ"/>
                             <constraint firstItem="yXP-tq-yyU" firstAttribute="leading" secondItem="oCR-vr-Igw" secondAttribute="leadingMargin" constant="12" id="tte-S0-k7z"/>
                         </constraints>
                         <variation key="default">
                             <mask key="constraints">
+                                <exclude reference="c7Y-XV-7lf"/>
                                 <exclude reference="dA7-3S-21G"/>
+                                <exclude reference="lSw-a3-doh"/>
                                 <exclude reference="2jl-H7-LuZ"/>
+                                <exclude reference="c86-Gc-wur"/>
+                                <exclude reference="FBU-Bx-SMM"/>
+                                <exclude reference="Lvk-91-e26"/>
+                                <exclude reference="lWL-iJ-YuW"/>
+                                <exclude reference="tte-S0-k7z"/>
                             </mask>
                         </variation>
                     </view>
@@ -217,6 +244,7 @@
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="CategorySelectionTableView" destination="yXP-tq-yyU" id="5cU-5g-eNq"/>
+                        <outlet property="DPAViewControllerTitleLabel" destination="lCE-xs-qcw" id="pYd-bn-UY8"/>
                         <outlet property="ResourceCollectionView" destination="2wX-hg-NJW" id="eZH-k9-u67"/>
                         <outlet property="optionView" destination="0lt-2b-fUo" id="AkN-k9-nig"/>
                         <outlet property="selectorView" destination="HUT-3R-uV6" id="V9o-2O-PPT"/>
@@ -226,7 +254,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="omj-Md-Bfb" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-491" y="-1209"/>
+            <point key="canvasLocation" x="-681" y="-1221"/>
         </scene>
         <!--Resource Detail View Controller-->
         <scene sceneID="Uj8-9J-n5b">
@@ -302,7 +330,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="awV-SH-bn9" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-672" y="2015"/>
+            <point key="canvasLocation" x="-754" y="1947"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="VWC-bP-Flg">
@@ -423,6 +451,14 @@
                                     </collectionViewCell>
                                 </cells>
                             </collectionView>
+                            <view contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="eSd-Xo-49Z" customClass="DPAResourceCellOptionPopUpView" customModule="DiepPhapAm" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="230" width="600" height="140"/>
+                                <color key="backgroundColor" red="0.69548326949999995" green="1" blue="0.25265988189999999" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="100" id="YQl-au-Ixp"/>
+                                    <constraint firstAttribute="height" constant="80" id="d9p-6W-iTg"/>
+                                </constraints>
+                            </view>
                             <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="DTW-kI-Ob5">
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="94"/>
                                 <subviews>
@@ -436,12 +472,26 @@
                                             <color key="titleColor" red="0.92941176469999998" green="0.92941176469999998" blue="0.92941176469999998" alpha="1" colorSpace="calibratedRGB"/>
                                         </state>
                                     </button>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Thư Viện" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0mW-yf-ktu">
+                                        <rect key="frame" x="279" y="32" width="42" height="21"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="21" id="cBL-6T-JBT"/>
+                                            <constraint firstAttribute="width" constant="80" id="gIb-Eg-vOP"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                        <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
                                 </subviews>
                                 <color key="backgroundColor" red="0.38823529410000002" green="0.0078431372550000003" blue="0.031372549020000001" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstItem="M6H-K4-gfL" firstAttribute="top" secondItem="DTW-kI-Ob5" secondAttribute="top" constant="15" id="2OQ-FO-3J1"/>
+                                    <constraint firstItem="0mW-yf-ktu" firstAttribute="centerX" secondItem="DTW-kI-Ob5" secondAttribute="centerX" id="93z-Hc-70H"/>
                                     <constraint firstItem="M6H-K4-gfL" firstAttribute="leading" secondItem="DTW-kI-Ob5" secondAttribute="leading" constant="25" id="BgX-SC-ozz"/>
+                                    <constraint firstAttribute="bottom" secondItem="0mW-yf-ktu" secondAttribute="bottom" constant="8" id="L6g-cK-XUA"/>
+                                    <constraint firstItem="0mW-yf-ktu" firstAttribute="centerY" secondItem="DTW-kI-Ob5" secondAttribute="centerY" id="W9t-jg-XGw"/>
                                     <constraint firstAttribute="height" constant="60" id="cI5-Am-eft"/>
+                                    <constraint firstItem="0mW-yf-ktu" firstAttribute="centerX" secondItem="DTW-kI-Ob5" secondAttribute="centerX" id="ivX-v9-bVb"/>
                                     <constraint firstItem="M6H-K4-gfL" firstAttribute="top" secondItem="DTW-kI-Ob5" secondAttribute="top" constant="4" id="msl-PM-09R"/>
                                     <constraint firstAttribute="bottom" secondItem="M6H-K4-gfL" secondAttribute="bottom" constant="4" id="yta-wC-IPq"/>
                                 </constraints>
@@ -449,16 +499,10 @@
                                     <mask key="constraints">
                                         <exclude reference="2OQ-FO-3J1"/>
                                         <exclude reference="msl-PM-09R"/>
+                                        <exclude reference="W9t-jg-XGw"/>
+                                        <exclude reference="ivX-v9-bVb"/>
                                     </mask>
                                 </variation>
-                            </view>
-                            <view contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="eSd-Xo-49Z" customClass="DPAResourceCellOptionPopUpView" customModule="DiepPhapAm" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="230" width="600" height="140"/>
-                                <color key="backgroundColor" red="0.69548326949999995" green="1" blue="0.25265988189999999" alpha="1" colorSpace="calibratedRGB"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="100" id="YQl-au-Ixp"/>
-                                    <constraint firstAttribute="height" constant="80" id="d9p-6W-iTg"/>
-                                </constraints>
                             </view>
                         </subviews>
                         <color key="backgroundColor" red="0.92941176469999998" green="0.92941176469999998" blue="0.92941176469999998" alpha="1" colorSpace="calibratedRGB"/>
@@ -486,6 +530,7 @@
                     <toolbarItems/>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
+                        <outlet property="DPAViewControllerTitleLabel" destination="0mW-yf-ktu" id="sCu-oX-SY9"/>
                         <outlet property="ResourceCollectionView" destination="jKU-au-fE8" id="67n-jb-6lN"/>
                         <outlet property="optionView" destination="eSd-Xo-49Z" id="s4p-uD-zqN"/>
                         <outlet property="sideBarButton" destination="M6H-K4-gfL" id="5Z9-r5-4fz"/>
@@ -494,7 +539,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="KOt-kG-ylB" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1971" y="855"/>
+            <point key="canvasLocation" x="-1967" y="995"/>
         </scene>
     </scenes>
     <resources>
@@ -502,6 +547,6 @@
         <image name="menu.png" width="512" height="512"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="cSl-lc-8ia"/>
+        <segue reference="lAf-3k-Pr9"/>
     </inferredMetricsTieBreakers>
 </document>

@@ -157,17 +157,7 @@ class DPACoreDatabase: NSObject {
     }
     func checkIfResourceExistInDatabase(resource:DPAResource) -> Bool
     {
-        /*NSFetchRequest *request = [[NSFetchRequest alloc] init];
-        [request setEntity:[NSEntityDescription entityForName:@"EntityName" inManagedObjectContext:moc]];
-        
-        NSError *error = nil;
-        NSArray *results = [moc executeFetchRequest:request error:&error];
-        
-        // error handling code
-        The array results contains all the managed objects contained within the sqlite file. If you want to grab a specific object (or more objects) you need to use a predicate with that request. For example:
-        
-        NSPredicate *predicate = [NSPredicate predicateWithFormat:@"attribute == %@", @"Some Value"];
-        [request setPredicate:predicate];*/
+       
         
         let request =  NSFetchRequest()
         request.entity = NSEntityDescription.entityForName("FavoriteResouce",
@@ -193,6 +183,42 @@ class DPACoreDatabase: NSObject {
             print(fetchError)
         }
         return false
+        
+        
+    }
+    func checkIfResourceExistInDatabase(resource:DPAResource,completion:(result:Bool)->Void)
+    {
+        
+        
+        let request =  NSFetchRequest()
+        request.entity = NSEntityDescription.entityForName("FavoriteResouce",
+            inManagedObjectContext:managedContext)
+        let predicate =  NSPredicate(format: "resourceID == %d", resource.resourceID)
+        
+        
+        request.predicate = predicate
+        print(resource.resourceID)
+        
+        
+        
+        do {
+            let result = try self.managedContext.executeFetchRequest(request) as! NSArray
+            
+            if result.count >= 1
+            {
+                completion(result: true)
+            }
+            else
+            {
+                completion(result: false)
+            }
+            
+        } catch {
+            let fetchError = error as NSError
+            print(fetchError)
+        }
+        
+
         
         
     }

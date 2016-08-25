@@ -43,6 +43,7 @@ class DPAFavoriteViewController: DPAViewController {
     }
     override func viewWillAppear(animated: Bool) {
         self.loadDataFromDatabase()
+        self.DPAViewControllerTitleLabel.text = "Yêu Thích"
     }
     override func viewDidLoad() {
     

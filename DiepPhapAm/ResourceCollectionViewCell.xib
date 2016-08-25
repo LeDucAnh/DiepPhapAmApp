@@ -58,8 +58,8 @@
                 <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="45D-P7-m9o">
                     <rect key="frame" x="94" y="-23" width="118" height="116"/>
                     <constraints>
-                        <constraint firstAttribute="width" constant="25" id="5r8-X1-rxd"/>
-                        <constraint firstAttribute="height" constant="25" id="IPm-55-UrB"/>
+                        <constraint firstAttribute="width" constant="20" id="5r8-X1-rxd"/>
+                        <constraint firstAttribute="height" constant="30" id="IPm-55-UrB"/>
                     </constraints>
                     <state key="normal" title="Button" image="VerticalThreeDots.png"/>
                     <connections>

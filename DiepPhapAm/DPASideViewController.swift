@@ -17,7 +17,7 @@ class DPASideViewController: UIViewController ,UITableViewDataSource,UITableView
     var currentSelected = 0
     var menuArray =  ["Thư Viện","Đăng Nhập","Yêu Thích","Cài Đặt"]
     var menuImaname = ["home.png","login.png","favorite.png","setting.png"]
-    
+    var tapGesture:UITapGestureRecognizer?
     override func viewDidLoad() {
         super.viewDidLoad()
         self.TableView.registerNib(UINib(nibName: "DPASideMenuTableViewCell", bundle: nil) , forCellReuseIdentifier: "Cell")
@@ -28,8 +28,93 @@ class DPASideViewController: UIViewController ,UITableViewDataSource,UITableView
                
         
     }
+    func presentVCWithIndex(index:Int)
+    {
+        if index == 1
+        {
+            
+            let storyboard = UIStoryboard(name: "Main", bundle: nil)
+            
+            let rootVC  =
+            
+            storyboard.instantiateViewControllerWithIdentifier("UIViewController") as! UIViewController
+            self.revealViewController().pushFrontViewController(rootVC, animated: true)
+            return
+        }
+        
+        if index == 2
+        {
+            
+            self.revealViewController().pushFrontViewController(AppDelegate.sharedInstance.DPAFavoriteVC, animated: true)
+            
+            
+            
+            return
+            
+        }
+            
+        else
+        {
+            
+            self.revealViewController().pushFrontViewController(AppDelegate.sharedInstance.DPATabbarVC, animated: true)
+            
+            return
+            
+        }
+        
+
+    }
+    
+    //tapGesture
+    func handleTap(sender: UITapGestureRecognizer)
+    {
+        self.RemoveTapGestureForcurrentSelectedVC()
+        self.presentVCWithIndex(self.currentSelected)
+        
+    }
+    func addTapGestureForcurrentSelectedVC()
+    {
+        
+       
+        
+        
+        
+        
+        self.tapGesture = UITapGestureRecognizer(target: self, action : "handleTap:")
+        tapGesture!.numberOfTapsRequired = 1
+        
+ 
+     
+        
+        
+        if currentSelected == 0
+        {
+           AppDelegate.sharedInstance.DPAViewVC.view.addGestureRecognizer(tapGesture!)
+        }
+        if currentSelected == 2
+        {
+            AppDelegate.sharedInstance.DPAFavoriteVC.view.addGestureRecognizer(tapGesture!)
+        }
+    }
+    func RemoveTapGestureForcurrentSelectedVC()
+    {
+        if currentSelected == 0
+        {
+            AppDelegate.sharedInstance.DPAViewVC.view.removeGestureRecognizer(self.tapGesture!)
+        }
+        if self.currentSelected == 2
+        {
+            AppDelegate.sharedInstance.DPAFavoriteVC.view.removeGestureRecognizer(self.tapGesture!)
+            
+        }
+
+    }
     override func viewWillAppear(animated: Bool) {
         self.TableView.reloadData()
+        self.addTapGestureForcurrentSelectedVC()
+    }
+    override func viewWillDisappear(animated: Bool) {
+        
     }
     func tableView(tableView:UITableView, numberOfRowsInSection section:Int) -> Int {
 
@@ -50,8 +135,12 @@ class DPASideViewController: UIViewController ,UITableViewDataSource,UITableView
         [self.revealViewController setFrontViewController:navController];
         [self.revealViewController setFrontViewPosition: FrontViewPositionLeft animated: YES];
         */
-        
+       
+         self.RemoveTapGestureForcurrentSelectedVC()
         self.currentSelected = indexPath.row
+        
+        self.presentVCWithIndex(indexPath.row)
+        return
         
         if indexPath.row == 1
         {
@@ -71,35 +160,26 @@ class DPASideViewController: UIViewController ,UITableViewDataSource,UITableView
             self.revealViewController().pushFrontViewController(AppDelegate.sharedInstance.DPAFavoriteVC, animated: true)
         
             
-            
-//            AppDelegate.sharedInstance.DPAFavoriteVC.ResourceCollectionView.reloadData()
-            
+
             return
 
         }
             
         else
-        {            //  self.presentViewController(AppDelegate.sharedInstance.DPATabbarVC!, animated: true, completion: nil)
-            
-            
+        {
             
             self.revealViewController().pushFrontViewController(AppDelegate.sharedInstance.DPATabbarVC, animated: true)
-                 //  AppDelegate.sharedInstance.DPAViewVC.ResourceCollectionView.reloadData()
-           // self.parentViewController!.presentViewController(AppDelegate.sharedInstance.DPAViewVC!, animated: true, completion: nil)
-            
+           
             return
             
         }
         
 
        
-        //UIStoryboard.instantiateViewControllerWithIdentifier(UIStoryboardView)
-       // self.mainViewController = self.storyboard?.instantiateViewControllerWithIdentifier(StoryBoardViewControllerIdentifier.TabBarController) as! TabBarController
-     //   self.rightViewController =  self.storyboard?.instantiateViewControllerWithIdentifier(StoryBoardViewControllerIdentifier.RightSideMenuVC) as! RightSideMenuCtrl
+   
         
 
     }
-
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell =  tableView.dequeueReusableCellWithIdentifier("Cell") as! DPASideMenuTableViewCell
         cell.DPASideMenuTableViewCellTitleLabel.text = self.menuArray[indexPath.row]

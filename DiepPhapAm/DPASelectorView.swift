@@ -64,6 +64,7 @@ protocol DPASelectorViewDelegate{
         
         let gesture = UITapGestureRecognizer(target: self, action: "viewDidTouch:")
         self.addGestureRecognizer(gesture)
+        self.view.addGestureRecognizer(gesture)
         
         
     }

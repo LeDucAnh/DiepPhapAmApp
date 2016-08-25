@@ -55,7 +55,11 @@ public enum  DPAResourceCellOptionPopUpViewOption: Int {
         // 3. Setup view from .xib file
         xibSetup()
     }
-    
+    func hide()
+    {
+        self.alpha = 0.0
+        self.removeLikeButton.setTitle("", forState: .Normal)
+    }
     func xibSetup() {
         
         

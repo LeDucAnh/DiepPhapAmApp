@@ -13,6 +13,9 @@ class DPALinks:NSObject
 
     var DPALinksPermalink = ""
     var DPALinksThumbnail = ""
+    
+    
+    var DPALinkPosterAvatar = ""
     //var resourceDescription = ""
     init(fromDict dict: NSDictionary) {
         
@@ -31,6 +34,11 @@ class DPALinks:NSObject
         }
         
         
+        if let avatar = dict["poster_avatar"] as? String {
+            
+            self.DPALinkPosterAvatar = avatar
+            
+        }
         
         // "icon":"http:\/\/dieuphapam.net\/data\/resource_icons\/3\/3896.jpg?1467947583",
         //"thumb":"http:\/\/dieuphapam.net\/data\/resource_icons\/3\/3896.jpg?1467947583"

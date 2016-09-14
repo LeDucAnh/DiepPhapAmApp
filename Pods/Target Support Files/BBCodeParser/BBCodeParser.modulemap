@@ -1,0 +1,6 @@
+framework module BBCodeParser {
+  umbrella header "BBCodeParser-umbrella.h"
+
+  export *
+  module * { export * }
+}

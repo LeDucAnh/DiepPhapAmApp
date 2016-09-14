@@ -49,6 +49,7 @@
                 <outlet property="DPACategoryResourceCountLabel" destination="tBO-WZ-7U1" id="iy5-sk-w2z"/>
                 <outlet property="DPACategoryTitleLabel" destination="Tph-Nz-U0f" id="FYG-vO-8XU"/>
             </connections>
+            <point key="canvasLocation" x="291" y="248"/>
         </tableViewCell>
     </objects>
 </document>

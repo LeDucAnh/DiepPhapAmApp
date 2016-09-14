@@ -7,13 +7,27 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0427C0341D73D77900A89227 /* DPAPost.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0427C0331D73D77900A89227 /* DPAPost.swift */; };
+		0427C0361D73D9B000A89227 /* DPAThread.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0427C0351D73D9B000A89227 /* DPAThread.swift */; };
+		0427C0381D74233800A89227 /* heart.png in Resources */ = {isa = PBXBuildFile; fileRef = 0427C0371D74233800A89227 /* heart.png */; };
 		042FC13E1D66BA8600244EF0 /* DPASideMenuTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 042FC13D1D66BA8600244EF0 /* DPASideMenuTableViewCell.xib */; };
 		042FC1401D66BF2100244EF0 /* DPASideMenuTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 042FC13F1D66BF2100244EF0 /* DPASideMenuTableViewCell.swift */; };
+		044DDF961D767F7F00E921D9 /* DPAThreadDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 044DDF951D767F7F00E921D9 /* DPAThreadDetailViewController.swift */; };
+		044DDFA11D768B3900E921D9 /* TFHpple.m in Sources */ = {isa = PBXBuildFile; fileRef = 044DDF9C1D768B3900E921D9 /* TFHpple.m */; };
+		044DDFA21D768B3900E921D9 /* TFHppleElement.m in Sources */ = {isa = PBXBuildFile; fileRef = 044DDF9E1D768B3900E921D9 /* TFHppleElement.m */; };
+		044DDFA31D768B3900E921D9 /* XPathQuery.m in Sources */ = {isa = PBXBuildFile; fileRef = 044DDFA01D768B3900E921D9 /* XPathQuery.m */; };
+		044DDFA51D768B7D00E921D9 /* libxml2.2.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 044DDFA41D768B7D00E921D9 /* libxml2.2.tbd */; };
+		046C66BF1D75299700369312 /* comment@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 046C66BE1D75299700369312 /* comment@3x.png */; };
+		046C66C11D7529D300369312 /* love@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 046C66C01D7529D300369312 /* love@3x.png */; };
+		046C66C51D752B2E00369312 /* share@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 046C66C41D752B2E00369312 /* share@3x.png */; };
 		047667D81D63EBB300F0E0A6 /* DPACollectionVCCustomFlow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 047667D71D63EBB300F0E0A6 /* DPACollectionVCCustomFlow.swift */; };
 		0480E1371D6DED2E000F9338 /* DPAResourceDetailStretchyHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0480E1361D6DED2E000F9338 /* DPAResourceDetailStretchyHeaderView.swift */; };
 		0480E1391D6DEDE8000F9338 /* DPAResourceDetailStretchyHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0480E1381D6DEDE8000F9338 /* DPAResourceDetailStretchyHeaderView.xib */; };
 		0480E13B1D6DF8DB000F9338 /* DPAResourceDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0480E13A1D6DF8DB000F9338 /* DPAResourceDetailViewController.swift */; };
 		0480E1411D6E0595000F9338 /* back.png in Resources */ = {isa = PBXBuildFile; fileRef = 0480E1401D6E0595000F9338 /* back.png */; };
+		048BDE551D73361B00446127 /* DPAInformationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 048BDE541D73361B00446127 /* DPAInformationViewController.swift */; };
+		048BDE591D7339A200446127 /* DPAInformationCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 048BDE571D7339A200446127 /* DPAInformationCollectionViewCell.swift */; };
+		048BDE5A1D7339A200446127 /* DPAInformationCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 048BDE581D7339A200446127 /* DPAInformationCollectionViewCell.xib */; };
 		049E36851D6411DA00AC924E /* DPALinks.swift in Sources */ = {isa = PBXBuildFile; fileRef = 049E36841D6411DA00AC924E /* DPALinks.swift */; };
 		04AD70BD1D65A21E009ECE73 /* menu@1x.png in Resources */ = {isa = PBXBuildFile; fileRef = 04AD70BA1D65A21E009ECE73 /* menu@1x.png */; };
 		04AD70BE1D65A21E009ECE73 /* menu@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 04AD70BB1D65A21E009ECE73 /* menu@2x.png */; };
@@ -29,6 +43,8 @@
 		04BCC4DA1D6303ED004F8543 /* ResourceCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04BCC4D91D6303ED004F8543 /* ResourceCollectionViewCell.swift */; };
 		04BCC4E61D630597004F8543 /* ResourceCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 04BCC4E51D630597004F8543 /* ResourceCollectionViewCell.xib */; };
 		04BEDEC51D675C620045F505 /* DPACategory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04BEDEC41D675C620045F505 /* DPACategory.swift */; };
+		04CA1A751D77DDB400DAC11C /* DPAThreadDetailTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04CA1A731D77DDB400DAC11C /* DPAThreadDetailTableViewCell.swift */; };
+		04CA1A761D77DDB400DAC11C /* DPAThreadDetailTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 04CA1A741D77DDB400DAC11C /* DPAThreadDetailTableViewCell.xib */; };
 		04D8126A1D647F2D00D3246A /* menu.png in Resources */ = {isa = PBXBuildFile; fileRef = 04D812691D647F2D00D3246A /* menu.png */; };
 		04D8126C1D647F6D00D3246A /* arrowdown.png in Resources */ = {isa = PBXBuildFile; fileRef = 04D8126B1D647F6D00D3246A /* arrowdown.png */; };
 		04DED06F1D6D7B2100EC03BB /* home.png in Resources */ = {isa = PBXBuildFile; fileRef = 04DED06E1D6D7B2100EC03BB /* home.png */; };
@@ -50,8 +66,22 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0427C0331D73D77900A89227 /* DPAPost.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DPAPost.swift; sourceTree = "<group>"; };
+		0427C0351D73D9B000A89227 /* DPAThread.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DPAThread.swift; sourceTree = "<group>"; };
+		0427C0371D74233800A89227 /* heart.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = heart.png; sourceTree = "<group>"; };
 		042FC13D1D66BA8600244EF0 /* DPASideMenuTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DPASideMenuTableViewCell.xib; sourceTree = "<group>"; };
 		042FC13F1D66BF2100244EF0 /* DPASideMenuTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DPASideMenuTableViewCell.swift; sourceTree = "<group>"; };
+		044DDF951D767F7F00E921D9 /* DPAThreadDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DPAThreadDetailViewController.swift; sourceTree = "<group>"; };
+		044DDF9B1D768B3900E921D9 /* TFHpple.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TFHpple.h; sourceTree = "<group>"; };
+		044DDF9C1D768B3900E921D9 /* TFHpple.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TFHpple.m; sourceTree = "<group>"; };
+		044DDF9D1D768B3900E921D9 /* TFHppleElement.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TFHppleElement.h; sourceTree = "<group>"; };
+		044DDF9E1D768B3900E921D9 /* TFHppleElement.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TFHppleElement.m; sourceTree = "<group>"; };
+		044DDF9F1D768B3900E921D9 /* XPathQuery.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XPathQuery.h; sourceTree = "<group>"; };
+		044DDFA01D768B3900E921D9 /* XPathQuery.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XPathQuery.m; sourceTree = "<group>"; };
+		044DDFA41D768B7D00E921D9 /* libxml2.2.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libxml2.2.tbd; path = usr/lib/libxml2.2.tbd; sourceTree = SDKROOT; };
+		046C66BE1D75299700369312 /* comment@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "comment@3x.png"; sourceTree = "<group>"; };
+		046C66C01D7529D300369312 /* love@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "love@3x.png"; sourceTree = "<group>"; };
+		046C66C41D752B2E00369312 /* share@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "share@3x.png"; sourceTree = "<group>"; };
 		047043731D6B3C70003C380F /* aaaa.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = aaaa.h; sourceTree = "<group>"; };
 		047043741D6B3CE4003C380F /* DiepPhapAm-Bridging-Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "DiepPhapAm-Bridging-Header.h"; sourceTree = "<group>"; };
 		047667D71D63EBB300F0E0A6 /* DPACollectionVCCustomFlow.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DPACollectionVCCustomFlow.swift; sourceTree = "<group>"; };
@@ -59,6 +89,9 @@
 		0480E1381D6DEDE8000F9338 /* DPAResourceDetailStretchyHeaderView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DPAResourceDetailStretchyHeaderView.xib; sourceTree = "<group>"; };
 		0480E13A1D6DF8DB000F9338 /* DPAResourceDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DPAResourceDetailViewController.swift; sourceTree = "<group>"; };
 		0480E1401D6E0595000F9338 /* back.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = back.png; sourceTree = "<group>"; };
+		048BDE541D73361B00446127 /* DPAInformationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DPAInformationViewController.swift; sourceTree = "<group>"; };
+		048BDE571D7339A200446127 /* DPAInformationCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DPAInformationCollectionViewCell.swift; sourceTree = "<group>"; };
+		048BDE581D7339A200446127 /* DPAInformationCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DPAInformationCollectionViewCell.xib; sourceTree = "<group>"; };
 		049E36841D6411DA00AC924E /* DPALinks.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DPALinks.swift; sourceTree = "<group>"; };
 		04AD70BA1D65A21E009ECE73 /* menu@1x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "menu@1x.png"; sourceTree = "<group>"; };
 		04AD70BB1D65A21E009ECE73 /* menu@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "menu@2x.png"; sourceTree = "<group>"; };
@@ -76,6 +109,8 @@
 		04BCC4D91D6303ED004F8543 /* ResourceCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResourceCollectionViewCell.swift; sourceTree = "<group>"; };
 		04BCC4E51D630597004F8543 /* ResourceCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ResourceCollectionViewCell.xib; sourceTree = "<group>"; };
 		04BEDEC41D675C620045F505 /* DPACategory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DPACategory.swift; sourceTree = "<group>"; };
+		04CA1A731D77DDB400DAC11C /* DPAThreadDetailTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DPAThreadDetailTableViewCell.swift; sourceTree = "<group>"; };
+		04CA1A741D77DDB400DAC11C /* DPAThreadDetailTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DPAThreadDetailTableViewCell.xib; sourceTree = "<group>"; };
 		04D812691D647F2D00D3246A /* menu.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = menu.png; sourceTree = "<group>"; };
 		04D8126B1D647F6D00D3246A /* arrowdown.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = arrowdown.png; sourceTree = "<group>"; };
 		04DED06E1D6D7B2100EC03BB /* home.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = home.png; sourceTree = "<group>"; };
@@ -103,6 +138,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				044DDFA51D768B7D00E921D9 /* libxml2.2.tbd in Frameworks */,
 				A09E892DB6489634B2B7A85C /* Pods_DiepPhapAm.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -127,6 +163,19 @@
 			path = DiepPhapAm;
 			sourceTree = "<group>";
 		};
+		044DDF9A1D768B2F00E921D9 /* http */ = {
+			isa = PBXGroup;
+			children = (
+				044DDF9B1D768B3900E921D9 /* TFHpple.h */,
+				044DDF9C1D768B3900E921D9 /* TFHpple.m */,
+				044DDF9D1D768B3900E921D9 /* TFHppleElement.h */,
+				044DDF9E1D768B3900E921D9 /* TFHppleElement.m */,
+				044DDF9F1D768B3900E921D9 /* XPathQuery.h */,
+				044DDFA01D768B3900E921D9 /* XPathQuery.m */,
+			);
+			name = http;
+			sourceTree = "<group>";
+		};
 		0472C8901D65F78400445A80 /* DPACellOptionPopUpView */ = {
 			isa = PBXGroup;
 			children = (
@@ -134,6 +183,15 @@
 				04ECFF4E1D660B3D0001935E /* DPAResourceCellOptionPopUpView.swift */,
 			);
 			name = DPACellOptionPopUpView;
+			sourceTree = "<group>";
+		};
+		048BDE561D73397800446127 /* DPAInformationCollecionViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				048BDE571D7339A200446127 /* DPAInformationCollectionViewCell.swift */,
+				048BDE581D7339A200446127 /* DPAInformationCollectionViewCell.xib */,
+			);
+			name = DPAInformationCollecionViewCell;
 			sourceTree = "<group>";
 		};
 		04BCC4B31D62FDE9004F8543 = {
@@ -161,6 +219,7 @@
 		04BCC4BE1D62FDE9004F8543 /* DiepPhapAm */ = {
 			isa = PBXGroup;
 			children = (
+				044DDF9A1D768B2F00E921D9 /* http */,
 				04BCC4D71D63027D004F8543 /* Views */,
 				04BCC4D81D630285004F8543 /* Controllers */,
 				04BCC4D61D630278004F8543 /* Models */,
@@ -184,6 +243,8 @@
 				047667D71D63EBB300F0E0A6 /* DPACollectionVCCustomFlow.swift */,
 				049E36841D6411DA00AC924E /* DPALinks.swift */,
 				04F728A21D6BD6E900C41954 /* DPACoreDatabase.swift */,
+				0427C0331D73D77900A89227 /* DPAPost.swift */,
+				0427C0351D73D9B000A89227 /* DPAThread.swift */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -191,10 +252,12 @@
 		04BCC4D71D63027D004F8543 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				048BDE561D73397800446127 /* DPAInformationCollecionViewCell */,
 				042FC13C1D66BA5E00244EF0 /* DPASideMenuTableViewCell */,
 				0472C8901D65F78400445A80 /* DPACellOptionPopUpView */,
 				04E8F0A91D64B0D400F99109 /* DPASelectorView */,
 				04BCC4DB1D6303F3004F8543 /* ResourceCell */,
+				04CA1A721D77DD7D00DAC11C /* DPAThreadDetailTableViewCell */,
 				04E26DE61D68076700336506 /* DPACategoryTableViewCell */,
 				0480E1361D6DED2E000F9338 /* DPAResourceDetailStretchyHeaderView.swift */,
 				0480E1381D6DEDE8000F9338 /* DPAResourceDetailStretchyHeaderView.xib */,
@@ -209,6 +272,8 @@
 				04AD70C21D65B47B009ECE73 /* DPASideViewController.swift */,
 				04F728A41D6C1EBD00C41954 /* DPAFavoriteViewController.swift */,
 				0480E13A1D6DF8DB000F9338 /* DPAResourceDetailViewController.swift */,
+				048BDE541D73361B00446127 /* DPAInformationViewController.swift */,
+				044DDF951D767F7F00E921D9 /* DPAThreadDetailViewController.swift */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -220,6 +285,15 @@
 				04BCC4E51D630597004F8543 /* ResourceCollectionViewCell.xib */,
 			);
 			name = ResourceCell;
+			sourceTree = "<group>";
+		};
+		04CA1A721D77DD7D00DAC11C /* DPAThreadDetailTableViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				04CA1A731D77DDB400DAC11C /* DPAThreadDetailTableViewCell.swift */,
+				04CA1A741D77DDB400DAC11C /* DPAThreadDetailTableViewCell.xib */,
+			);
+			name = DPAThreadDetailTableViewCell;
 			sourceTree = "<group>";
 		};
 		04D812641D647DDC00D3246A /* image */ = {
@@ -236,6 +310,10 @@
 				04ECFF4A1D6604DA0001935E /* VerticalThreeDots.png */,
 				04AD70BC1D65A21E009ECE73 /* menu@3x.png */,
 				0480E1401D6E0595000F9338 /* back.png */,
+				0427C0371D74233800A89227 /* heart.png */,
+				046C66BE1D75299700369312 /* comment@3x.png */,
+				046C66C01D7529D300369312 /* love@3x.png */,
+				046C66C41D752B2E00369312 /* share@3x.png */,
 			);
 			name = image;
 			path = DiepPhapAm;
@@ -271,6 +349,7 @@
 		F7F845A5E2BAFFD3D6862338 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				044DDFA41D768B7D00E921D9 /* libxml2.2.tbd */,
 				36D71718155E4BFEA6D031BD /* Pods_DiepPhapAm.framework */,
 			);
 			name = Frameworks;
@@ -338,9 +417,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				04ECFF4B1D6604DA0001935E /* VerticalThreeDots.png in Resources */,
+				0427C0381D74233800A89227 /* heart.png in Resources */,
 				04AD70BF1D65A21E009ECE73 /* menu@3x.png in Resources */,
 				04D8126C1D647F6D00D3246A /* arrowdown.png in Resources */,
 				04E26DE51D68075D00336506 /* DPACategoryTableViewCell.xib in Resources */,
+				046C66C51D752B2E00369312 /* share@3x.png in Resources */,
 				04BCC4CD1D62FDE9004F8543 /* LaunchScreen.storyboard in Resources */,
 				04ECFF4D1D660A220001935E /* DPAResourceCellOptionPopUpView.xib in Resources */,
 				04BCC4CA1D62FDE9004F8543 /* Assets.xcassets in Resources */,
@@ -349,14 +430,18 @@
 				042FC13E1D66BA8600244EF0 /* DPASideMenuTableViewCell.xib in Resources */,
 				04AD70BE1D65A21E009ECE73 /* menu@2x.png in Resources */,
 				04DED0751D6D7BA300EC03BB /* favorite.png in Resources */,
+				046C66C11D7529D300369312 /* love@3x.png in Resources */,
 				04AD70BD1D65A21E009ECE73 /* menu@1x.png in Resources */,
+				048BDE5A1D7339A200446127 /* DPAInformationCollectionViewCell.xib in Resources */,
 				04DED06F1D6D7B2100EC03BB /* home.png in Resources */,
 				04DED0771D6D7BD700EC03BB /* setting.png in Resources */,
 				0480E1391D6DEDE8000F9338 /* DPAResourceDetailStretchyHeaderView.xib in Resources */,
 				0480E1411D6E0595000F9338 /* back.png in Resources */,
 				04BCC4E61D630597004F8543 /* ResourceCollectionViewCell.xib in Resources */,
+				04CA1A761D77DDB400DAC11C /* DPAThreadDetailTableViewCell.xib in Resources */,
 				04E8F0AD1D64BEC600F99109 /* DPASelectorView.xib in Resources */,
 				04BCC4C51D62FDE9004F8543 /* Main.storyboard in Resources */,
+				046C66BF1D75299700369312 /* comment@3x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -416,22 +501,31 @@
 			buildActionMask = 2147483647;
 			files = (
 				0480E13B1D6DF8DB000F9338 /* DPAResourceDetailViewController.swift in Sources */,
+				048BDE591D7339A200446127 /* DPAInformationCollectionViewCell.swift in Sources */,
 				04BCC4C81D62FDE9004F8543 /* DiepPhapAm.xcdatamodeld in Sources */,
 				04E07A141D63334200AB6A7E /* DpaAPI.swift in Sources */,
+				0427C0361D73D9B000A89227 /* DPAThread.swift in Sources */,
+				044DDFA11D768B3900E921D9 /* TFHpple.m in Sources */,
 				047667D81D63EBB300F0E0A6 /* DPACollectionVCCustomFlow.swift in Sources */,
+				0427C0341D73D77900A89227 /* DPAPost.swift in Sources */,
 				04F728A31D6BD6E900C41954 /* DPACoreDatabase.swift in Sources */,
 				04ECFF4F1D660B3D0001935E /* DPAResourceCellOptionPopUpView.swift in Sources */,
 				04AD70C31D65B47B009ECE73 /* DPASideViewController.swift in Sources */,
 				04E8F0AB1D64BCC700F99109 /* DPASelectorView.swift in Sources */,
 				04E07A121D63314C00AB6A7E /* DPAResource.swift in Sources */,
+				044DDFA31D768B3900E921D9 /* XPathQuery.m in Sources */,
 				049E36851D6411DA00AC924E /* DPALinks.swift in Sources */,
 				04BCC4C21D62FDE9004F8543 /* ViewController.swift in Sources */,
+				04CA1A751D77DDB400DAC11C /* DPAThreadDetailTableViewCell.swift in Sources */,
 				04F728A51D6C1EBD00C41954 /* DPAFavoriteViewController.swift in Sources */,
+				044DDFA21D768B3900E921D9 /* TFHppleElement.m in Sources */,
 				042FC1401D66BF2100244EF0 /* DPASideMenuTableViewCell.swift in Sources */,
 				04BCC4D51D62FF85004F8543 /* DPAViewController.swift in Sources */,
 				04BCC4DA1D6303ED004F8543 /* ResourceCollectionViewCell.swift in Sources */,
+				048BDE551D73361B00446127 /* DPAInformationViewController.swift in Sources */,
 				0480E1371D6DED2E000F9338 /* DPAResourceDetailStretchyHeaderView.swift in Sources */,
 				04BCC4C01D62FDE9004F8543 /* AppDelegate.swift in Sources */,
+				044DDF961D767F7F00E921D9 /* DPAThreadDetailViewController.swift in Sources */,
 				04BEDEC51D675C620045F505 /* DPACategory.swift in Sources */,
 				04E26DE41D68075D00336506 /* DPACategoryTableViewCell.swift in Sources */,
 			);
@@ -495,6 +589,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
+				HEADER_SEARCH_PATHS = "$(SDKROOT)/usr/include/libxml2";
 				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -534,6 +629,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
+				HEADER_SEARCH_PATHS = "$(SDKROOT)/usr/include/libxml2";
 				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;

@@ -1,4 +1,5 @@
 PODS:
+  - BBCodeParser (0.1.2)
   - GSKStretchyHeaderView (0.11.0):
     - KVOController (~> 1.1)
   - KVOController (1.1.0)
@@ -9,18 +10,20 @@ PODS:
   - TUSafariActivity (1.0.4)
 
 DEPENDENCIES:
+  - BBCodeParser
   - GSKStretchyHeaderView
   - SDWebImage
   - SWRevealViewController
   - TUSafariActivity
 
 SPEC CHECKSUMS:
+  BBCodeParser: 5c78c6a75d8eae5a4cff8cdb77375bffee5df490
   GSKStretchyHeaderView: a1cf458af8efe5350ffb306598be6b4d10fa0750
   KVOController: 321b5fc59300fcaabd42c0f679baa7a27efbb2fd
   SDWebImage: 35f9627a3e44b4f292a8a8ce6a531fa488239b91
   SWRevealViewController: 6d3fd97f70112fd7cef9de14df4260eacce4c63a
   TUSafariActivity: afc55a00965377939107ce4fdc7f951f62454546
 
-PODFILE CHECKSUM: 8e6a517d636527f92db73d848ea9a6a155c2a7b4
+PODFILE CHECKSUM: a9f53b521e72a36902cf455efd7e7c6465ee3240
 
 COCOAPODS: 1.0.1

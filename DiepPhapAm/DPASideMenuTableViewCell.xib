@@ -51,12 +51,12 @@
                 <constraint firstItem="29e-X0-wNz" firstAttribute="height" secondItem="iN0-l3-epB" secondAttribute="height" multiplier="0.5" id="Fg1-dZ-Nhx"/>
                 <constraint firstItem="29e-X0-wNz" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="Xvn-jn-BtE"/>
                 <constraint firstItem="GIk-2T-TAR" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="afg-Fq-Vkf"/>
-                <constraint firstItem="GIk-2T-TAR" firstAttribute="leading" secondItem="29e-X0-wNz" secondAttribute="trailing" constant="30" id="c1e-Pc-DY5"/>
+                <constraint firstItem="GIk-2T-TAR" firstAttribute="leading" secondItem="29e-X0-wNz" secondAttribute="trailing" constant="40" id="c1e-Pc-DY5"/>
                 <constraint firstItem="29e-X0-wNz" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="cPY-Ix-p1C"/>
                 <constraint firstAttribute="bottom" secondItem="29e-X0-wNz" secondAttribute="bottom" id="fN4-jE-AWz"/>
                 <constraint firstItem="GIk-2T-TAR" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="2" id="gF0-Hg-k6V"/>
                 <constraint firstItem="GIk-2T-TAR" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="nlO-Y7-mnH"/>
-                <constraint firstItem="29e-X0-wNz" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="rUe-lv-Pm5"/>
+                <constraint firstItem="29e-X0-wNz" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="15" id="rUe-lv-Pm5"/>
                 <constraint firstItem="GIk-2T-TAR" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="zId-hS-W1N"/>
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>

@@ -19,7 +19,76 @@ class DpaAPI:NSObject
     
     let CategoryRequestString = "http://dieuphapam.net/appforo/index.php?resource-categories"
     var ResourceRequestByIDString = "http://dieuphapam.net/appforo/index.php?resources/RESOURCEID/&oauth_token=e335d4a1008174d5c78084bcd469fad4c752e587"
+    var informationRequestString = "http://dieuphapam.net/appforo/index.php?threads/promoted&oauth_token=0,1472120928,4a399e9641bce5e02ebd7aa2a40bf865,mkxx7h3o2n&locale=vi&limit=15&page=CURRENTPAGE"
     
+    func RequestForInformationNews(currentPage:Int,completion:(Error:Bool,resultArray :NSArray)->Void)
+    {
+        var requestString =  self.informationRequestString.stringByReplacingOccurrencesOfString("CURRENTPAGE", withString: String(currentPage))
+        
+        
+        
+        let requestURL =  NSURL(string:requestString)
+        
+        let urlRequest: NSMutableURLRequest = NSMutableURLRequest(URL: requestURL!)
+        // print(ALAssetsLibraryAssetForURLResultBlock)
+        let session = NSURLSession.sharedSession()
+        let task = session.dataTaskWithRequest(urlRequest) {
+            (data, response, error) -> Void in
+            
+            
+            if response == nil
+            {
+                completion(Error: true, resultArray: NSArray())
+            }
+            
+            let httpResponse = response as! NSHTTPURLResponse
+            let statusCode = httpResponse.statusCode
+            
+            if (statusCode == 200) {
+                print("Everyone is fine, file downloaded successfully.")
+                
+                
+                do{
+                    
+                    let json = try NSJSONSerialization.JSONObjectWithData(data!, options:.AllowFragments)
+                    
+                    var returnArray = NSMutableArray()
+                    if let resultArray = json.objectForKey("threads") as?
+                        //[[String: AnyObject]] {
+                        NSArray
+                    {
+                        for resource in resultArray {
+                            
+                            var newResouce =  DPAThread.init(fromDict: resource as! NSDictionary)
+                            
+                            returnArray.addObject(newResouce)
+                            
+                        }
+                        
+                    }
+                    completion(Error: false, resultArray: returnArray)
+                    
+                }catch {
+                    print("Error with Json: \(error)")
+                }
+                
+                
+            }else
+            {
+                print(error)
+            }
+        }
+        
+        
+        
+        task.resume()
+        
+        
+
+        
+
+        
+    }
     
     func addNewResouceAsCategory(originalArray:NSArray) -> NSArray
     {
@@ -199,6 +268,7 @@ class DpaAPI:NSObject
 
 
     }
+    
     
     func requestForResource(currentCategory:Int,currentPage:Int,completion:(Error:Bool,resultArray :NSArray)->Void)
     {

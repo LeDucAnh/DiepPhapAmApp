@@ -32,7 +32,7 @@ class ResourceCollectionViewCell: UICollectionViewCell {
         self.ResourceImageView.layer.borderColor = UIColor(red:255/255.0, green:255/255.0, blue:255/255.0, alpha: 1.0).CGColor
     }
     
-    func heightForComment(font: UIFont, width: CGFloat,comment :String) -> CGFloat {
+ public  func heightForComment(font: UIFont, width: CGFloat,comment :String) -> CGFloat {
         
         
         let rect = NSString(string: comment).boundingRectWithSize(CGSize(width: width, height: CGFloat(MAXFLOAT)), options: .UsesLineFragmentOrigin, attributes: [NSFontAttributeName: font], context: nil)

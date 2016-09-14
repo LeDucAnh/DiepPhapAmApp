@@ -8,6 +8,7 @@ target 'DiepPhapAm' do
     pod 'TUSafariActivity'
     pod 'SWRevealViewController'
     pod 'GSKStretchyHeaderView'
+    pod 'BBCodeParser'
     
     use_frameworks!
 end

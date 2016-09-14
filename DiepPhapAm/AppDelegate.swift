@@ -11,8 +11,29 @@ import UIKit
 import CoreData
 
 @UIApplicationMain
-class AppDelegate: UIResponder, UIApplicationDelegate {
 
+class AppDelegate: UIResponder, UIApplicationDelegate , NSXMLParserDelegate{
+
+    public enum  DPAParseBBCodeType: Int {
+        case Image
+        case Attach
+        case BoldText
+        case CenterText
+        case  NormalText// iPhone and iPod touch style UI
+        
+    }
+    var  bbcodeStrureTypeArray = NSMutableArray()
+    var resultArray = NSMutableArray()
+
+    
+    var parser = NSXMLParser()
+    var posts = NSMutableArray()
+    var elements = NSMutableDictionary()
+    var element = NSString()
+    var title1 = NSMutableString()
+    var date = NSMutableString()
+  
+    
     
     static let sharedInstance = AppDelegate()
     var DPARed = UIColor(red: 99/255, green: 2/255, blue: 8/255, alpha: 1.0)
@@ -24,9 +45,251 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     var DPAMainTabbarVC:UITabBarController = UIStoryboard(name: "Main", bundle: nil).instantiateViewControllerWithIdentifier("DPAMainUITabbarController") as! UITabBarController
 
+    
+    
+    func beginParsing(string:String)
+    {
+        print(string)
+        
+        posts = []
+    parser =    NSXMLParser(data: string.dataUsingEncoding(NSUTF8StringEncoding)!)
+        
+        //parser = NSXMLParser(contentsOfURL:(NSURL(string:"http://images.apple.com/main/rss/hotnews/hotnews.rss"))!)!
+        parser.delegate = self
+        parser.parse()
+        //     tbData!.reloadData()
+        
+        
+        for x in self.posts
+        {
+            print(x)
+        }
+    }
+    func parser(parser: NSXMLParser, didStartElement elementName: String, namespaceURI: String?, qualifiedName qName: String?, attributes attributeDict: [String : String])
+    {
+        element = elementName
+        if (elementName as NSString).isEqualToString("CENTER")
+        {
+            elements = NSMutableDictionary()
+            elements = [:]
+            title1 = NSMutableString()
+            title1 = ""
+            date = NSMutableString()
+            date = ""
+        }
+    }
+    
+    func parser(parser: NSXMLParser!, foundCharacters string: String!)
+    {
+        if element.isEqualToString("title") {
+            title1.appendString(string)
+        } else if element.isEqualToString("pubDate") {
+            date.appendString(string)
+        }
+    }
+    func convertbbcodeToNSArray() -> NSArray
+    {
+        var body:NSMutableString = "[CENTER]Đã lợp ngói- Nhìn từ cổng tam quan vào[/CENTER]"
+        
+        
+        let body2 =   body.stringByReplacingOccurrencesOfString("=full", withString: "")
+        body = body2 as! NSMutableString
+        var result = NSMutableArray()
+        print(body2)
+        
+        
+        
+        while (body.length > 0)
+        {
+            let firstletter =  body.substringToIndex(1) as! String
+            print(firstletter)
+            if firstletter == "["
+            {
+                var i  = 0
+                while String(body.substringWithRange(NSMakeRange(i, 1))) != "]"
+                {
+                    i++
+                }
+                i = i + 1
+                var tag:NSMutableString =  body.substringToIndex(i) as! NSMutableString
+                print(tag)
+                var     endtag = tag.substringToIndex(1)
+                endtag.appendContentsOf("/")
+                endtag.appendContentsOf(tag.substringFromIndex(1))
+                
+                print(endtag)
+                
+                
+                print(tag)
+                print(endtag)
+                
+                /*
+                if tag == "[ATTACH]" && endtag == "[/ATTACH]"
+                {
+                
+                }*/
+                /// at this point
+                let convertedbody =  body as! String
+                
+                let endindex =        convertedbody.indexOf(endtag as! String)
+                
+                let EndintValue = convertedbody.startIndex.distanceTo(endindex!)
+                var  stringlengh = endtag.characters.count + EndintValue
+                
+                
+                var checkString =  body.substringToIndex(stringlengh - endtag.characters.count) as! NSMutableString
+                checkString = checkString.substringFromIndex(tag.length) as! NSMutableString
+                print(checkString)
+                if checkString.containsString("ATTACH") || checkString.containsString("IMG")
+                {
+                    var converted =  checkString as! String
+                    var removedstring  = ""
+                    
+                    
+                    if checkString.containsString("ATTACH")
+                    {
+                        converted =   converted.sliceFrom("[ATTACH]", to: "[/ATTACH]")!
+                        removedstring  = "[ATTACH]" + converted + "[/ATTACH]"
+                      
+                        self.bbcodeStrureTypeArray.addObject(NSMutableArray(array: [DPAParseBBCodeType.Attach.rawValue]))
+
+                    }
+                    else
+                    {
+                        converted =   converted.sliceFrom("[IMG]", to: "[/IMG]")!
+                        removedstring  = "[IMG]" + converted + "[/IMG]"
+                        self.bbcodeStrureTypeArray.addObject(NSMutableArray(array: [DPAParseBBCodeType.Image.rawValue]))
+                        
+
+                       
+                    }
+                    
+                    print("------------------------")
+                    
+                    print(converted)
+                    
+                    result.addObject(converted)
+                    
+                    
+                    
+                    
+                    let body2 =   body.stringByReplacingOccurrencesOfString(removedstring, withString: "")
+                    body  = body2 as! NSMutableString
+                    stringlengh = stringlengh - removedstring.characters.count
+                }
+                
+               
+                let addedString =    body.substringToIndex(stringlengh)
+                
+                print(addedString)
+                
+                
+                body = body.substringFromIndex(stringlengh + 1) as! NSMutableString
+                print(body)
+                result.addObject(addedString)
+                
+                
+                switch (true) {
+                case (addedString.containsString("[ATTACH]")):
+                    self.bbcodeStrureTypeArray.addObject(DPAParseBBCodeType.Attach.rawValue)
+                case (addedString.containsString("[IMG]")):
+                    self.bbcodeStrureTypeArray.addObject(DPAParseBBCodeType.Image.rawValue)
+                    
+                case (addedString.containsString("[CENTER]")):
+                    self.bbcodeStrureTypeArray.addObject(DPAParseBBCodeType.CenterText.rawValue)
+                case (addedString.containsString("[B]")):
+                    self.bbcodeStrureTypeArray.addObject(DPAParseBBCodeType.BoldText.rawValue)
+                    
+                default:
+                    self.bbcodeStrureTypeArray.addObject(DPAParseBBCodeType.NormalText.rawValue)
+                }
+                
+                
+                if checkString.containsString("ATTACH")
+                {
+                    
+                }
+                if checkString.containsString("IMG")
+                {
+                    
+                }
+                if checkString.containsString("CENTER")
+                {
+                    
+                }
+                
+            }
+            else
+            {
+                var i  = 0
+                while String(body.substringWithRange(NSMakeRange(i, 1))) != "[" && i < body.length - 1
+                {
+                    i++
+                    
+                }
+                
+                let addedString =    body.substringToIndex(i)
+                result.addObject(addedString)
+                if i + 1 >= body.length
+                {
+                    i = i + 1
+                }
+                body = body.substringFromIndex(i) as! NSMutableString
+                self.bbcodeStrureTypeArray.addObject(DPAParseBBCodeType.NormalText.rawValue)
+                
+                
+                
+                
+                
+            }
+            
+        }
+        return result
+        
+        
+    }
+
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         UIApplication.sharedApplication().statusBarStyle = .LightContent
         // Override point for customization after application launch.
+      
+        
+        var x = "[CENTER]Đã lợp ngói- Nhìn từ cổng tam quan vào[/CENTER]\n" as! NSMutableString
+        
+        
+        
+    print(x.substringToIndex(55 - 9))
+        
+        self.resultArray =     self.convertbbcodeToNSArray() as! NSMutableArray
+        for element  in resultArray
+        {
+            print(element)
+            
+        }
+        for element  in self.bbcodeStrureTypeArray
+        {
+            print(element)
+        }
+        
+
+        
+        var body = "Nam Mô Bổn Sư Thích Ca Mâu Ni Phật\n\nNhờ Tam Bảo, Quý Thầy, Quí Sư Cô, Quí Phật tử phát lòng ủng hộ công trình kiến tạo ngôi Chánh điện và Trường quay nên tiến độ xây dựng diễn ra thuận lợi và nhanh chóng.\n\nTính đến nay 12/8/2016, Trung tâm đã nhận tịnh tài đóng góp của Phật tử trong và ngoài nước là [B]1,068,304,200 VND và 164 bao xi măng, Trung tâm đã mua vật liệu và tạm ứng cho nhà Thầu  là 1,423,390,000 VND (một tỷ bốn trăm hai mươi ba triệu ba trăm chín mươi nghìn đồng).[/B]\n\nSau đây, xin chia sẻ những hình ảnh diễn tiến xây dựng Chánh Điện và Trường quay DPA:\n[ATTACH=full]324[/ATTACH]\n[CENTER]Đã lợp ngói- Nhìn từ cổng tam quan vào[/CENTER]\n[ATTACH=full]325[/ATTACH]\n[CENTER]Từ cổng tam quan nhìn bên trái[/CENTER]\n[ATTACH=full]326[/ATTACH]\n[CENTER]Nhìn từ ngoài cổng bên phải\nThưa Quí vị Hữu duyên, công trình khi hoàn thành sẽ là nơi sản xuất, nơi làm ra những chương trình phổ biến lời Phật dạy, cải hóa lòng người, làm đường hướng tu tập cho bao chúng sinh.[/CENTER]\n\nThưa quí vị, đồng tâm nguyện cao quí đó, cho đến thời điểm hiện tại, quý Thầy đã nhận được sự phát tâm đóng góp tịnh tài của Phật tử trong và ngoài nước.\n\nNhờ vậy đã tiến hành xây dựng được gần 2 phần 3 công trình. Quý Thầy rất mong công trình Phật sự quan trọng và cần thiết cho việc hoằng dương Phật pháp này  được hoàn thành. Quý Thầy Trung Tâm tiếp tục kêu gọi quí Phật tử, quí vị hảo tâm phát lòng ủng hộ.\n\n[B]Nơi tiếp nhận cúng dường:[/B]\nGởi trực tiếp: Trung Tâm\nChùa Khuông Việt 1355 Hoàng Sa, P5, Tân Bình, TPHCM\nĐT: 08.39934238 gặp Thầy Minh Thiền.\n\n[B]Hoặc chuyển khoản:[/B]\nGhi rõ Ủng hộ xây dựng\n\nTên tài khoản: Lê Minh Quý\nSố tài khoản: 6480205059030\nNgân hàng: Agribank, Chi Nhánh 11, TP.HCM\n\nTên tài khoản: Lê Minh Quý\nSố tài khoản: 0331000441094\nNgân hàng: Vietcombank, PGD Lạc Long Quân, TP.HCM\n\n[B]Hay qua Tài khoản Paypal:[/B]\nPaypal ID: [EMAIL]paypal@dieuphapam.net[/EMAIL]\n\nThay mặt Trung Tâm chân thành niệm ân và kêu gọi các vị cùng góp tay với Quý Thầy để Phật pháp đến với nhiều người hơn.\n\nNam Mô Công Đức Lâm Bồ Tát Ma Ha Tát\nTrung tâm DPA"
+
+
+        
+        body =  body.stringByReplacingOccurrencesOfString("[CENTER]", withString: "<CENTER><CENTER")
+     
+        body =  body.stringByReplacingOccurrencesOfString("</CENTER]", withString: "></CENTER></CENTER>")
+        self.beginParsing(body)
+        
+       
+               print(body)
+        print(body.indexOf("[CENTER]"))
+        
+        
+        
+
+        
         return true
     }
 
@@ -104,7 +367,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             dict[NSLocalizedDescriptionKey] = "Failed to initialize the application's saved data"
             dict[NSLocalizedFailureReasonErrorKey] = failureReason
 
-            dict[NSUnderlyingErrorKey] = error as NSError
+            dict[NSUnderlyingErrorKey] = error as! NSError
             let wrappedError = NSError(domain: "YOUR_ERROR_DOMAIN", code: 9999, userInfo: dict)
             // Replace this with code to handle the error appropriately.
             // abort() causes the application to generate a crash log and terminate. You should not use this function in a shipping application, although it may be useful during development.
@@ -138,6 +401,30 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             }
         }
     }
+    
+    
+    public  func heightForComment(font: UIFont, width: CGFloat,comment :String) -> CGFloat {
+        
+        let rect = NSString(string: comment).boundingRectWithSize(CGSize(width: width, height: CGFloat(MAXFLOAT)), options: .UsesLineFragmentOrigin, attributes: [NSFontAttributeName: font], context: nil)
+        return ceil(rect.height)
+    }
+    
+ 
+    
+    func heightForView(var text:String, font:UIFont, width:CGFloat) -> CGFloat{
+        let label:UILabel = UILabel(frame: CGRectMake(0, 0, width, CGFloat.max))
+        label.numberOfLines = 0
+        label.lineBreakMode = NSLineBreakMode.ByWordWrapping
+        label.font = font
+        
+        label.text = text
+        
+        label.sizeToFit()
+        return label.frame.height
+    }
+
+  
+
 
 }
 

@@ -354,15 +354,7 @@ class DPAViewController: UIViewController ,UICollectionViewDataSource,UICollecti
     
     //DPAResourceCellOptionButtonDelegate
     func displayShareSheet(shareContent:String) {
-        
-        /* NSArray *activities = @[[SVWebViewControllerActivitySafari new], [SVWebViewControllerActivityChrome new]];
-        UIActivityViewController *activityViewController = [[UIActivityViewController alloc] initWithActivityItems:@[_article.url] applicationActivities:activities];*/
-        
-      
-      //  let activity = TUSafariActivity()
- 
-        /*SVWebViewController *webViewController = [[SVWebViewController alloc] initWithAddress:@"http://google.com"];
-        [self.navigationController pushViewController:webViewController animated:YES];*/
+
      
        
         let activity = TUSafariActivity()
